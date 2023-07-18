@@ -1,4 +1,4 @@
-import { hello } from '@arvinxu/npm-template';
+import { hello } from 'easy-antd-modal';
 
 test('hello', () => {
   expect(hello()).toBe('world');

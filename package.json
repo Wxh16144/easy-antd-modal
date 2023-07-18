@@ -1,22 +1,47 @@
 {
-  "name": "@arvinxu/npm-template",
-  "version": "1.11.1",
-  "description": "a npm develop template",
+  "name": "easy-antd-modal",
+  "version": "0.0.1",
+  "description": "二次开发, 简化 Ant Design Modal 的使用方式",
   "keywords": [
-    "npm",
-    "template"
+    "antd",
+    "Ant Design",
+    "Modal",
+    "React",
+    "drag"
   ],
-  "homepage": "https://github.com/arvinxx/npm-template",
+  "homepage": "https://github.com/Wxh16144/easy-antd-modal#readme",
   "bugs": {
-    "url": "https://github.com/arvinxx/npm-template/issues/new"
+    "url": "https://github.com/Wxh16144/easy-antd-modal/issues/new"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arvinxx/npm-template.git"
+    "url": "https://github.com/Wxh16144/easy-antd-modal.git"
   },
   "license": "MIT",
-  "author": "arvinxx(arvinx@foxmail.com)",
+  "author": "Wxh16144(wxh1220@gmail.com)",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./drag-modal": {
+      "types": "./es/drag-modal/index.d.ts",
+      "import": "./es/drag-modal/index.js",
+      "require": "./lib/drag-modal/index.js"
+    },
+    "./hooks": {
+      "types": "./es/hooks/index.d.ts",
+      "import": "./es/hooks/index.js",
+      "require": "./lib/hooks/index.js"
+    },
+    "./util": {
+      "types": "./es/util/index.d.ts",
+      "import": "./es/util/index.js",
+      "require": "./lib/util/index.js"
+    }
+  },
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "lib/index.d.ts",
@@ -27,7 +52,7 @@
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
-    "changelog": "conventional-changelog -n node_modules/conventional-changelog-gitmoji-config -i CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "ci": "npm run lint && npm run type-check && npm run doctor && npm run build",
     "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache",
     "dev": "dumi dev",
@@ -60,15 +85,15 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17",
+    "@commitlint/config-conventional": "^17",
     "@testing-library/react": "^14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@umijs/lint": "^4",
     "@vitest/coverage-v8": "latest",
     "commitlint": "^17",
-    "commitlint-config-gitmoji": "^2",
     "concurrently": "^7",
-    "conventional-changelog-gitmoji-config": "^1",
+    "conventional-changelog-cli": "^3",
     "cross-env": "^7",
     "dumi": "^2",
     "dumi-theme-antd-style": "latest",
@@ -83,11 +108,11 @@
     "react": "^18",
     "react-dom": "^18",
     "semantic-release": "^21",
-    "semantic-release-config-gitmoji": "^1",
     "stylelint": "^15",
     "typescript": "^5",
     "vitest": "latest"
   },
+  "packageManager": "pnpm@8.0.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

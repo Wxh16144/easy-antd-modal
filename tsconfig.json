@@ -12,8 +12,8 @@
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "@/*": ["src"],
-      "@arvinxu/npm-template": ["src"],
-      "@arvinxu/npm-template/*": ["src/*", "*"]
+      "easy-antd-modal": ["src"],
+      "easy-antd-modal/*": ["src/*", "*"]
     }
   }
 }

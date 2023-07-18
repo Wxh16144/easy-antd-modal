@@ -1,14 +1,4 @@
-<a name="readme-top"></a>
-
-<div align="center">
-
-[//]: # '<img width="160" src="https://avatars.githubusercontent.com/u/17870709?v=4">'
-
-<h1>@arvinxu/npm-template</h1>
-
-一个开发 npm 项目的模板
-
-[Changelog](./CHANGELOG.md) · [Report Bug][issues-url] · [Request Feature][issues-url]
+# easy-antd-modal
 
 <!-- SHIELD GROUP -->
 
@@ -18,14 +8,7 @@
 
 [![contributors][contributors-shield]][contributors-url] [![forks][forks-shield]][forks-url] [![stargazers][stargazers-shield]][stargazers-url] [![issues][issues-shield]][issues-url]
 
-[![ docs by dumi][dumi-url]](https://d.umijs.org/) [![Build With father][father-url]](https://github.com/umijs/father/)
-
-![](https://github.com/othneildrew/Best-README-Template/raw/master/images/screenshot.png)
-
-<!-- gitpod url -->
-
-[gitpod-badge]: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
-[gitpod-url]: https://gitpod.io/#https://github.com/ant-design/@arvinxu/npm-template
+[![docs by dumi][dumi-url]](https://d.umijs.org/) [![Build With father][father-url]](https://github.com/umijs/father/)
 
 <!-- umi url -->
 
@@ -34,35 +17,34 @@
 
 <!-- npm url -->
 
-[npm-image]: http://img.shields.io/npm/v/@arvinxu/npm-template.svg?style=flat-square&color=deepgreen&label=latest
-[npm-url]: http://npmjs.org/package/@arvinxu/npm-template
-[npm-size]: https://img.shields.io/bundlephobia/minzip/@arvinxu/npm-template?color=deepgreen&label=gizpped%20size&style=flat-square
-[npm-size-url]: https://packagephobia.com/result?p=@arvinxu/npm-template
+[npm-image]: http://img.shields.io/npm/v/easy-antd-modal.svg?style=flat-square&color=deepgreen&label=latest
+[npm-url]: http://npmjs.org/package/easy-antd-modal
+[npm-size]: https://img.shields.io/bundlephobia/minzip/easy-antd-modal?color=deepgreen&label=gizpped%20size&style=flat-square
+[npm-size-url]: https://packagephobia.com/result?p=easy-antd-modal
 
 <!-- coverage -->
 
-[coverage]: https://codecov.io/gh/arvinxx/npm-template/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/arvinxx/npm-template/branch/master
+[coverage]: https://codecov.io/gh/Wxh16144/easy-antd-modal/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/Wxh16144/easy-antd-modal/branch/master
 
 <!-- Github CI -->
 
-[test-ci]: https://github.com/arvinxx/npm-template/workflows/Test%20CI/badge.svg
-[release-ci]: https://github.com/arvinxx/npm-template/workflows/Release%20CI/badge.svg
-[test-ci-url]: https://github.com/arvinxx/npm-template/actions?query=workflow%3ATest%20CI
-[release-ci-url]: https://github.com/arvinxx/npm-template/actions?query=workflow%3ARelease%20CI
-[download-image]: https://img.shields.io/npm/dm/@arvinxu/npm-template.svg?style=flat-square
-[download-url]: https://npmjs.org/package/@arvinxu/npm-template
-
-</div>
+[test-ci]: https://github.com/Wxh16144/easy-antd-modal/workflows/Test%20CI/badge.svg
+[release-ci]: https://github.com/Wxh16144/easy-antd-modal/workflows/Release%20CI/badge.svg
+[test-ci-url]: https://github.com/Wxh16144/easy-antd-modal/actions?query=workflow%3ATest%20CI
+[release-ci-url]: https://github.com/Wxh16144/easy-antd-modal/actions?query=workflow%3ARelease%20CI
+[download-image]: https://img.shields.io/npm/dm/easy-antd-modal.svg?style=flat-square
+[download-url]: https://npmjs.org/package/easy-antd-modal
 
 ## 简介
 
-这是一个开发 npm 项目的模板，具有以下特点：
+基于 Ant Design 的 Modal 组件的二次封装，简化了 Modal 的使用方式
 
-- 🏗️ **基于 father4 的构建工具**：本项目采用了基于 father4 的构建工具，可以更高效地构建项目，提高开发效率；
-- 📖 **基于 dumi2 的文档工具**：本项目采用了基于 dumi2 的文档工具，可以更方便地编写和管理文档，提高文档的可读性和可维护性；
-- 🚀 **基于 vercel 自动化触发文档站构建**：本项目使用 vercel 自动化触发文档站构建，可以更快地更新文档站，提高用户的使用体验；
-- 📦 **基于 semantic-release 实现 npm 包的自动化发布**：本项目使用 semantic-release 实现 npm 包的自动化发布，可以更方便地管理和发布 npm 包，提高开发效率。
+- 支持 antd@4.x 和 antd@5.x, API 保持一致
+- 自动绑定打开事件, 无需维护 open 状态
+- content 增强, 支持内部手动关闭
+- 支持拖拽, 类 window 窗口
+- 长期维护 (欢迎 PR)
 
 ## 快速上手
 
@@ -71,71 +53,51 @@
 推荐使用 `pnpm` 安装
 
 ```bash
-pnpm i @arvinxu/npm-template -S
+pnpm i easy-antd-modal -S
 ```
 
 ### 使用
 
-基于该仓库模板可以快速创建一个 npm 包的工程化脚手架。
+```tsx | pure
+import { Button } from 'antd';
+import Modal from 'easy-antd-modal';
+
+export default () => (
+  <Modal title="easy-antd-modal" trigger={<Button type="primary">Click Me</Button>}>
+    I ❤️ antd
+  </Modal>
+);
+```
 
 ## 迭代记录
 
-2023.06.12 - 完善文档与 README 框架
-
-2022.12.17 - 基于蚂蚁研发技术栈配置完成最新的 npm 研发脚手架
-
 详情：[CHANGELOG](./CHANGELOG.md)
 
-## 🤝 Contributing
+## 📝 License
 
-<!-- CONTRIBUTION GROUP -->
-
-> 📊 Total: <kbd>**2**</kbd>
-
-<a href="https://github.com/arvinxx" title="arvinxx">
-  <img src="https://avatars.githubusercontent.com/u/28616219?v=4" width="50" />
-</a>
-<a href="https://github.com/actions-user" title="actions-user">
-  <img src="https://avatars.githubusercontent.com/u/65916846?v=4" width="50" />
-</a>
-
-<!-- CONTRIBUTION END -->
-
-<div align="right">
-
-[![][back-to-top]](#readme-top)
-
-## </div>
-
-#### 📝 License
-
-Copyright © 2020 - present [Arvin Xu][profile-url]. <br />
+Copyright © 2023 - present [Wxh16144[profile-url]. <br />
 This project is [MIT](./LICENSE) licensed.
 
 <!-- LINK GROUP -->
 
-[profile-url]: https://github.com/arvinxx
-
-<!-- SHIELD LINK GROUP -->
-
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
+[profile-url]: https://github.com/Wxh16144
 
 <!-- contributors -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/arvinxx/npm-template.svg?style=flat
-[contributors-url]: https://github.com/arvinxx/npm-template/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/Wxh16144/easy-antd-modal.svg?style=flat
+[contributors-url]: https://github.com/Wxh16144/easy-antd-modal/graphs/contributors
 
 <!-- forks -->
 
-[forks-shield]: https://img.shields.io/github/forks/arvinxx/npm-template.svg?style=flat
-[forks-url]: https://github.com/arvinxx/npm-template/network/members
+[forks-shield]: https://img.shields.io/github/forks/Wxh16144/easy-antd-modal.svg?style=flat
+[forks-url]: https://github.com/Wxh16144/easy-antd-modal/network/members
 
 <!-- stargazers -->
 
-[stargazers-shield]: https://img.shields.io/github/stars/arvinxx/npm-template.svg?style=flat
-[stargazers-url]: https://github.com/arvinxx/npm-template/stargazers
+[stargazers-shield]: https://img.shields.io/github/stars/Wxh16144/easy-antd-modal.svg?style=flat
+[stargazers-url]: https://github.com/Wxh16144/easy-antd-modal/stargazers
 
 <!-- issues -->
 
-[issues-shield]: https://img.shields.io/github/issues/arvinxx/npm-template.svg?style=flat
-[issues-url]: https://github.com/arvinxx/npm-template/issues/new/choose
+[issues-shield]: https://img.shields.io/github/issues/Wxh16144/easy-antd-modal.svg?style=flat
+[issues-url]: https://github.com/Wxh16144/easy-antd-modal/issues/new/choose

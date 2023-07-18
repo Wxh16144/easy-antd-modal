@@ -1,8 +1,8 @@
 ---
 name: '报告Bug 🐛'
-about: 报告 @arvinxu/npm-template 的 bug
-title: '🐛[BUG]'
-labels: '🐛 BUG'
+about: 报告 easy-antd-modal 的 bug
+title: '[BUG]'
+labels: 'BUG'
 assignees: ''
 ---
 
@@ -31,11 +31,9 @@ assignees: ''
 (可在下方 codesandbox 链接中添加你的最小可复现 demo)
 -->
 
-[可复现 demo](https://codesandbox.io/s/html2ksetch-demo-m53be?file=/src/Demo.tsx)
-
 ### © 版本信息
 
-- @arvinxu/npm-template 版本: [e.g. 1.0.0]
+- easy-antd-modal 版本: [e.g. 1.0.0]
 - 浏览器环境
 - 开发环境 [e.g. mac OS]
 

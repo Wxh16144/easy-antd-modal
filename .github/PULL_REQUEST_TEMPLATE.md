@@ -2,11 +2,11 @@
 
 <!-- For change type, change [ ] to [x]. -->
 
-- \[ ] ✨ feat
-- \[ ] 🐛 fix
-- \[ ] 💄 style
-- \[ ] 🔨 chore
-- \[ ] 📝 docs
+- \[ ] feat
+- \[ ] fix
+- \[ ] style
+- \[ ] chore
+- \[ ] docs
 
 #### 🔀 变更说明 | Description of Change
 

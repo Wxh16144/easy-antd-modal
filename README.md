@@ -73,9 +73,9 @@ export default () => (
 
 详情：[CHANGELOG](./CHANGELOG.md)
 
-## 📝 License
+## License
 
-Copyright © 2023 - present [Wxh16144[profile-url]. <br />
+Copyright © 2023 - present [Wxh16144][profile-url]. <br />
 This project is [MIT](./LICENSE) licensed.
 
 <!-- LINK GROUP -->

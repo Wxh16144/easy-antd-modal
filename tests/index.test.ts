@@ -1,5 +1,5 @@
-import { hello } from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 
-test('hello', () => {
-  expect(hello()).toBe('world');
+test('Modal', () => {
+  expect(Modal).toBeDefined();
 });

@@ -57,7 +57,6 @@
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "ci": "npm run lint && npm run type-check && npm run doctor && npm run build",
     "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache",
     "dev": "dumi dev",
@@ -91,6 +90,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17",
     "@commitlint/config-conventional": "^17",
+    "@semantic-release/changelog": "^6.0.3",
     "@testing-library/jest-dom": "^5",
     "@testing-library/react": "^14",
     "@types/react": "^18",
@@ -99,7 +99,6 @@
     "@vitest/coverage-v8": "latest",
     "commitlint": "^17",
     "concurrently": "^7",
-    "conventional-changelog-cli": "^3",
     "cross-env": "^7",
     "dumi": "^2",
     "dumi-theme-antd-style": "latest",

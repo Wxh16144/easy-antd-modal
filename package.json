@@ -26,6 +26,11 @@
       "import": "./es/index.js",
       "require": "./lib/index.js"
     },
+    "./mobile": {
+      "types": "./es/mobile/index.d.ts",
+      "import": "./es/mobile/index.js",
+      "require": "./lib/mobile/index.js"
+    },
     "./drag-modal": {
       "types": "./es/drag-modal/index.d.ts",
       "import": "./es/drag-modal/index.js",
@@ -52,7 +57,6 @@
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "ci": "npm run lint && npm run type-check && npm run doctor && npm run build",
     "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache",
     "dev": "dumi dev",
@@ -86,6 +90,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17",
     "@commitlint/config-conventional": "^17",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@testing-library/jest-dom": "^5",
     "@testing-library/react": "^14",
     "@types/react": "^18",
@@ -94,7 +100,6 @@
     "@vitest/coverage-v8": "latest",
     "commitlint": "^17",
     "concurrently": "^7",
-    "conventional-changelog-cli": "^3",
     "cross-env": "^7",
     "dumi": "^2",
     "dumi-theme-antd-style": "latest",
@@ -118,6 +123,7 @@
     "@dnd-kit/modifiers": "^6",
     "@dnd-kit/utilities": "latest",
     "antd": ">=4.23.0 || >=5.0.0",
+    "antd-mobile": "^5",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },

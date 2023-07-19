@@ -7,18 +7,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: create pnpm-lock.yaml
-        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Get pnpm store directory
         id: pnpm-cache

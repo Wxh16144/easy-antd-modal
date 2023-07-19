@@ -17,7 +17,6 @@ _roadhog-api-doc
 storybook-static
 npm-debug.log*
 yarn-error.log
-pnpm-lock.yaml
 
 /coverage
 .idea

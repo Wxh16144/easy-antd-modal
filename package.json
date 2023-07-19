@@ -26,6 +26,11 @@
       "import": "./es/index.js",
       "require": "./lib/index.js"
     },
+    "./mobile": {
+      "types": "./es/mobile/index.d.ts",
+      "import": "./es/mobile/index.js",
+      "require": "./lib/mobile/index.js"
+    },
     "./drag-modal": {
       "types": "./es/drag-modal/index.d.ts",
       "import": "./es/drag-modal/index.js",
@@ -118,6 +123,7 @@
     "@dnd-kit/modifiers": "^6",
     "@dnd-kit/utilities": "latest",
     "antd": ">=4.23.0 || >=5.0.0",
+    "antd-mobile": "^5",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },

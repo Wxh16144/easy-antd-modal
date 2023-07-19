@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEasyAntdModalContext } from '../context';
 import type { AnyFunction, AnyObj } from '../types';
-import { isDOMTypeElement, isElement } from '../util';
+import { isDOMTypeElement, isElement, omit } from '../util';
 import useBoolean from './useBoolean';
 
 export type PropsWithModalEnhanced<T extends AnyObj> = {
@@ -17,10 +17,7 @@ type HandleCallback = (e: React.MouseEvent<HTMLElement>, action: ModalEnhancedAc
 export interface UseModalEnhancedProps {
   defaultOpen?: boolean;
   onClick?: HandleCallback;
-  onFocus?: HandleCallback;
-  onHover?: HandleCallback;
   actionRef?: React.RefObject<ModalEnhancedAction>;
-
   content?: ContentType;
   trigger?: TriggerType;
   children?: ContentType | TriggerType;
@@ -69,8 +66,16 @@ function useModalEnhanced(props: UseModalEnhancedProps = {}) {
 
   const contextHolder = { trigger, content: contentNode };
   const action = { open, close };
+  const resetProps = omit(props, [
+    'defaultOpen',
+    'onClick',
+    'actionRef',
+    'content',
+    'trigger',
+    'children',
+  ]);
 
-  return [visible, action, contextHolder] as const;
+  return [visible, action, contextHolder, resetProps] as const;
 }
 
 export default useModalEnhanced;

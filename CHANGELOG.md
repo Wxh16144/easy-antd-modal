@@ -1,3 +1,11 @@
+# [1.2.0-beta.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.1.1...v1.2.0-beta.1) (2023-08-01)
+
+### Features
+
+- 基础功能开发 ([2fb3ac2](https://github.com/Wxh16144/easy-antd-modal/commit/2fb3ac29b479fd27a947b1fef38b17aba3f0ebcb))
+- 导出上下文中的 useEasyAntdModal hook ([e614ead](https://github.com/Wxh16144/easy-antd-modal/commit/e614ead7b310c0fecf547fea9266fbc71d19c032))
+- 添加移动端 & 使用文档 ([4ab7905](https://github.com/Wxh16144/easy-antd-modal/commit/4ab790594c3c250226a798a7fec42b36dcc15caf))
+
 ## [1.1.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.1.0...v1.1.1) (2023-07-24)
 
 ### Bug Fixes

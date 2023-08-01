@@ -4,19 +4,20 @@ import type { AnyFunction, AnyObj } from '../types';
 import { isDOMTypeElement, isElement, omit } from '../util';
 import useBoolean from './useBoolean';
 
-export type PropsWithModalEnhanced<T extends AnyObj> = {
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type PropsWithModalEnhanced<T extends AnyObj = {}> = {
   enhancedAction?: ModalEnhancedAction;
 } & T;
 
 type TriggerType = React.ReactNode;
 type ContentType =
   | React.ReactNode
-  | (<P extends AnyObj>(props: PropsWithModalEnhanced<P>) => React.ReactNode);
-type HandleCallback = (e: React.MouseEvent<HTMLElement>, action: ModalEnhancedAction) => void;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  | (<P extends AnyObj = {}>(props: PropsWithModalEnhanced<P>) => React.ReactNode);
 
 export interface UseModalEnhancedProps {
   defaultOpen?: boolean;
-  onClick?: HandleCallback;
+  onClick?: (e: React.MouseEvent<HTMLElement>, action: ModalEnhancedAction) => void;
   actionRef?: React.RefObject<ModalEnhancedAction>;
   content?: ContentType;
   trigger?: TriggerType;
@@ -51,7 +52,7 @@ function useModalEnhanced(props: UseModalEnhancedProps = {}) {
     trigger = React.cloneElement<any>(mergedTrigger, { onClick: handleClick });
 
   // ======================== Content ========================
-  let contentNode: React.ReactNode = null;
+  let contentNode: React.ReactNode = mergedContent as React.ReactNode;
   if (isElement<PropsWithModalEnhanced<any>>(contentNode) && !isDOMTypeElement(contentNode)) {
     contentNode = React.cloneElement<PropsWithModalEnhanced<any>>(contentNode, {
       enhancedAction: actionRef.current,
@@ -60,8 +61,6 @@ function useModalEnhanced(props: UseModalEnhancedProps = {}) {
     contentNode = (mergedContent as AnyFunction)({
       enhancedAction: actionRef.current,
     });
-  } else {
-    contentNode = mergedContent as any;
   }
 
   const contextHolder = { trigger, content: contentNode };

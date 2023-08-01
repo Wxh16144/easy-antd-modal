@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.1.1...v1.2.0) (2023-08-01)
+
+### Features
+
+- 添加 useEasyAntdModal 导出 ([#4](https://github.com/Wxh16144/easy-antd-modal/issues/4)) ([5464171](https://github.com/Wxh16144/easy-antd-modal/commit/5464171fb50f41feb126f7885d23ec5930878056))
+
 # [1.2.0-beta.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.1.1...v1.2.0-beta.1) (2023-08-01)
 
 ### Features

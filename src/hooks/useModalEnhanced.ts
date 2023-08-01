@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEasyAntdModalContext } from '../context';
+import { useEasyAntdModal } from '../context';
 import type { AnyFunction, AnyObj } from '../types';
 import { isDOMTypeElement, isElement, omit } from '../util';
 import useBoolean from './useBoolean';
@@ -34,7 +34,7 @@ function useModalEnhanced(props: UseModalEnhancedProps = {}) {
 
   const [visible, { setTrue: open, setFalse: close }] = useBoolean(defaultOpen);
   const actionRef = React.useRef<ModalEnhancedAction>({ open, close });
-  const { triggerProps, contentProps } = useEasyAntdModalContext();
+  const { triggerProps, contentProps } = useEasyAntdModal();
 
   const mergedTrigger = props[triggerProps!] as TriggerType;
   const mergedContent = props[contentProps!] as ContentType;

@@ -18,13 +18,13 @@ export const EasyAntdModalContext = React.createContext<EasyAntdModalContextType
   contentProps: 'children',
 });
 
-export const useEasyAntdModalContext = () => React.useContext(EasyAntdModalContext);
+export const useEasyAntdModal = () => React.useContext(EasyAntdModalContext);
 
 export const EasyAntdModalProvider = (props: React.PropsWithChildren<EasyAntdModalContextType>) => {
   const {
     triggerProps: parentTriggerProps = 'trigger',
     contentProps: parentContentProps = 'children',
-  } = useEasyAntdModalContext();
+  } = useEasyAntdModal();
 
   const { children, triggerProps = parentTriggerProps, contentProps = parentContentProps } = props;
 

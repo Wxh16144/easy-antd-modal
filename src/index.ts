@@ -1,4 +1,4 @@
-import { EasyAntdModalProvider } from './context'; // 只导出 Provider!!!
+import { EasyAntdModalProvider, useEasyAntdModal } from './context';
 import DragModal from './drag-modal';
 import Drawer from './drawer';
 import Modal from './modal';
@@ -10,7 +10,14 @@ export * from './util';
 export * from './drag-modal';
 export * from './modal';
 
-export { DragModal, Drawer, EasyAntdModalProvider, Modal };
+export {
+  DragModal,
+  Drawer,
+  EasyAntdModalProvider,
+  Modal,
+  // ====== Hooks ======
+  useEasyAntdModal,
+};
 
 export default Modal;
 

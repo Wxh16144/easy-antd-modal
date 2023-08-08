@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.2.0...v1.2.1) (2023-08-08)
+
+### Bug Fixes
+
+- 修复前置依赖版本问题 ([#5](https://github.com/Wxh16144/easy-antd-modal/issues/5)) ([79051f8](https://github.com/Wxh16144/easy-antd-modal/commit/79051f8b1da3f53f10a258656e07a94df2e68fa4))
+
 # [1.2.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.1.1...v1.2.0) (2023-08-01)
 
 ### Features

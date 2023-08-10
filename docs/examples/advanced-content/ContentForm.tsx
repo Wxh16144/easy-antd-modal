@@ -28,7 +28,7 @@ const ContentForm: React.FC<PropsWithModalEnhanced> = ({ enhancedAction }) => {
       initialValues={{
         user: {
           name: 'John Doe',
-          age: Math.floor(Math.random() * 100),
+          age: 26,
         },
       }}
     >

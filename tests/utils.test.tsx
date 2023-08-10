@@ -10,6 +10,7 @@ describe('src/util', () => {
     });
 
     it('invalidate array', () => {
+      // @ts-expect-error
       const ret = omit({ bamboo: 1 }, null);
       expect(ret).toEqual({ bamboo: 1 });
     });

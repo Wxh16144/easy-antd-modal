@@ -104,6 +104,7 @@
     "dumi": "^2",
     "dumi-theme-antd-style": "latest",
     "eslint": "^8",
+    "fast-glob": "^3.3.1",
     "father": "^4",
     "husky": "^8",
     "jsdom": "^22",

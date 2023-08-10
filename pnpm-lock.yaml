@@ -72,6 +72,9 @@ importers:
       eslint:
         specifier: ^8
         version: 8.46.0
+      fast-glob:
+        specifier: ^3.3.1
+        version: 3.3.1
       father:
         specifier: ^4
         version: 4.3.0(@types/node@20.4.8)(styled-components@6.0.7)(webpack@5.88.2)

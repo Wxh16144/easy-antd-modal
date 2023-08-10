@@ -1,5 +1,9 @@
-import { Modal } from 'easy-antd-modal';
+import DefaultExportModal, { Modal } from 'easy-antd-modal';
 
-test('Modal', () => {
-  expect(Modal).toBeDefined();
+describe('Modal', () => {
+  it('默认导出为 Modal', () => {
+    expect(DefaultExportModal).toBeDefined();
+    expect(Modal).toBeDefined();
+    expect(DefaultExportModal).toBe(Modal);
+  });
 });

@@ -1,0 +1,465 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders advanced-content/ContentForm.tsx correctly 1`] = `
+<div>
+  <form
+    class="ant-form ant-form-horizontal css-dev-only-do-not-override-fpg3f5"
+    id="nest-messages"
+  >
+    <div
+      class="ant-form-item css-dev-only-do-not-override-fpg3f5"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-fpg3f5"
+      >
+        <div
+          class="ant-col ant-col-6 ant-form-item-label css-dev-only-do-not-override-fpg3f5"
+        >
+          <label
+            class="ant-form-item-required"
+            for="nest-messages_user_name"
+            title="Name"
+          >
+            Name
+          </label>
+        </div>
+        <div
+          class="ant-col ant-col-14 ant-form-item-control css-dev-only-do-not-override-fpg3f5"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <input
+                aria-required="true"
+                class="ant-input css-dev-only-do-not-override-fpg3f5"
+                id="nest-messages_user_name"
+                type="text"
+                value="John Doe"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-dev-only-do-not-override-fpg3f5"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-fpg3f5"
+      >
+        <div
+          class="ant-col ant-col-6 ant-form-item-label css-dev-only-do-not-override-fpg3f5"
+        >
+          <label
+            class=""
+            for="nest-messages_user_email"
+            title="Email"
+          >
+            Email
+          </label>
+        </div>
+        <div
+          class="ant-col ant-col-14 ant-form-item-control css-dev-only-do-not-override-fpg3f5"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <input
+                class="ant-input css-dev-only-do-not-override-fpg3f5"
+                id="nest-messages_user_email"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-dev-only-do-not-override-fpg3f5"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-fpg3f5"
+      >
+        <div
+          class="ant-col ant-col-6 ant-form-item-label css-dev-only-do-not-override-fpg3f5"
+        >
+          <label
+            class=""
+            for="nest-messages_user_age"
+            title="Age"
+          >
+            Age
+          </label>
+        </div>
+        <div
+          class="ant-col ant-col-14 ant-form-item-control css-dev-only-do-not-override-fpg3f5"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <div
+                class="ant-input-number ant-input-number-in-form-item css-dev-only-do-not-override-fpg3f5"
+              >
+                <div
+                  class="ant-input-number-handler-wrap"
+                >
+                  <span
+                    aria-disabled="false"
+                    aria-label="Increase Value"
+                    class="ant-input-number-handler ant-input-number-handler-up"
+                    role="button"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="up"
+                      class="anticon anticon-up ant-input-number-handler-up-inner"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="up"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    aria-disabled="false"
+                    aria-label="Decrease Value"
+                    class="ant-input-number-handler ant-input-number-handler-down"
+                    role="button"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="down"
+                      class="anticon anticon-down ant-input-number-handler-down-inner"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="down"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="ant-input-number-input-wrap"
+                >
+                  <input
+                    aria-valuenow="26"
+                    autocomplete="off"
+                    class="ant-input-number-input"
+                    id="nest-messages_user_age"
+                    role="spinbutton"
+                    step="1"
+                    value="26"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-dev-only-do-not-override-fpg3f5"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-fpg3f5"
+      >
+        <div
+          class="ant-col ant-col-6 ant-form-item-label css-dev-only-do-not-override-fpg3f5"
+        >
+          <label
+            class=""
+            for="nest-messages_user_website"
+            title="Website"
+          >
+            Website
+          </label>
+        </div>
+        <div
+          class="ant-col ant-col-14 ant-form-item-control css-dev-only-do-not-override-fpg3f5"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <input
+                class="ant-input css-dev-only-do-not-override-fpg3f5"
+                id="nest-messages_user_website"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-dev-only-do-not-override-fpg3f5"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-fpg3f5"
+      >
+        <div
+          class="ant-col ant-col-6 ant-form-item-label css-dev-only-do-not-override-fpg3f5"
+        >
+          <label
+            class=""
+            for="nest-messages_user_introduction"
+            title="Introduction"
+          >
+            Introduction
+          </label>
+        </div>
+        <div
+          class="ant-col ant-col-14 ant-form-item-control css-dev-only-do-not-override-fpg3f5"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <textarea
+                class="ant-input css-dev-only-do-not-override-fpg3f5"
+                id="nest-messages_user_introduction"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-dev-only-do-not-override-fpg3f5"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-fpg3f5"
+      >
+        <div
+          class="ant-col ant-col-14 ant-col-offset-6 ant-form-item-control css-dev-only-do-not-override-fpg3f5"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+                type="submit"
+              >
+                <span>
+                  Submit
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`renders advanced-content/drawer.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Form Drawer
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders advanced-content/modal.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Form Modal
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders drag-modal/basic.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Drag Modal
+    </span>
+  </button>
+  <div
+    id="DndDescribedBy-0"
+    style="display: none;"
+  >
+    
+    To pick up a draggable item, press the space bar.
+    While dragging, use the arrow keys to move the item.
+    Press space again to drop the item in its new position, or press escape to cancel.
+  
+  </div>
+  <div
+    aria-atomic="true"
+    aria-live="assertive"
+    id="DndLiveRegion-0"
+    role="status"
+    style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+  />
+</div>
+`;
+
+exports[`renders drawer/basic.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Drawer
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders mobile-dialog/basic.tsx correctly 1`] = `
+<div>
+  <button
+    class="adm-button adm-button-warning adm-button-shape-default"
+    type="button"
+  >
+    <span>
+      Open Dialog
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders mobile-mask/basic.tsx correctly 1`] = `
+<div>
+  <button
+    class="adm-button adm-button-primary adm-button-shape-default"
+    type="button"
+  >
+    <span>
+      Open Mask
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders mobile-modal/basic.tsx correctly 1`] = `
+<div>
+  <button
+    class="adm-button adm-button-success adm-button-shape-default"
+    type="button"
+  >
+    <span>
+      Open Modal
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders mobile-popup/basic.tsx correctly 1`] = `
+<div>
+  <button
+    class="adm-button adm-button-danger adm-button-shape-default"
+    type="button"
+  >
+    <span>
+      Open Popup
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders modal/action-ref.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Modal
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders modal/trigger-event.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Modal
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders provider-demo/case01.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Modal
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders provider-demo/case02.tsx correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-fpg3f5 ant-btn-primary"
+    type="button"
+  >
+    <span>
+      Open Modal
+    </span>
+  </button>
+</div>
+`;

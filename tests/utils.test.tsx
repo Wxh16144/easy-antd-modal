@@ -20,7 +20,7 @@ describe('src/util', () => {
     });
   });
 
-  describe.only('react-is', () => {
+  describe('react-is', () => {
     it('isElement', () => {
       expect(true).toBeTruthy();
       expect(<div />).toBeTruthy();
@@ -36,9 +36,8 @@ describe('src/util', () => {
       expect(null).toBeFalsy();
       expect(undefined).toBeFalsy();
       expect(NaN).toBeFalsy();
-
-    })
-  })
+    });
+  });
 
   it('isDOMTypeElement', () => {
     expect(true).toBeTruthy();
@@ -55,5 +54,5 @@ describe('src/util', () => {
     expect(null).toBeFalsy();
     expect(undefined).toBeFalsy();
     expect(NaN).toBeFalsy();
-  })
+  });
 });

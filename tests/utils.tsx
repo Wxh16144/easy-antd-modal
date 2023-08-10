@@ -1,4 +1,6 @@
-import { act } from '@testing-library/react';
+import { RenderOptions, RenderResult, act, render } from '@testing-library/react';
+import { ConfigProvider } from 'antd';
+import * as React from 'react';
 import { vi } from 'vitest';
 
 /**
@@ -22,3 +24,29 @@ export async function waitFakeTimer(advanceTime = 1000, times = 20) {
     });
   }
 }
+
+const AllTheProviders = ({ children }: React.PropsWithChildren) => {
+  return (
+    <React.StrictMode>
+      <ConfigProvider
+        theme={{
+          hashed: false,
+        }}
+      >
+        {children}
+      </ConfigProvider>
+    </React.StrictMode>
+  );
+};
+
+// re-export everything
+export * from '@testing-library/react';
+
+const pureRender = render;
+const customRender = (
+  ui: React.ReactElement,
+  options?: Omit<RenderOptions, 'wrapper'>,
+): RenderResult => render(ui, { wrapper: AllTheProviders, ...options });
+
+// override render method
+export { pureRender, customRender as render };

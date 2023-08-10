@@ -1,8 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react';
 import { Button } from 'antd';
 import Modal, { EasyAntdModalProvider, useEasyAntdModal } from 'easy-antd-modal';
 import React from 'react';
-import { waitFakeTimer } from './utils';
+import { fireEvent, render, screen, waitFakeTimer } from './utils';
 
 describe('Provider', () => {
   it('triggerProps 和 contentProps 冲突会抛出错误', () => {

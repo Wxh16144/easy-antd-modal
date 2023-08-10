@@ -1,4 +1,3 @@
-import { fireEvent, render, screen } from '@testing-library/react';
 import { Button } from 'antd';
 import DefaultExportModal, {
   Modal,
@@ -6,7 +5,7 @@ import DefaultExportModal, {
   PropsWithModalEnhanced,
 } from 'easy-antd-modal';
 import React from 'react';
-import { waitFakeTimer } from './utils';
+import { fireEvent, render, screen, waitFakeTimer } from './utils';
 
 describe('Modal', () => {
   it('默认导出为 Modal', () => {

@@ -1,9 +1,8 @@
-import { render } from '@testing-library/react';
-import { EasyAntdModalProvider } from 'easy-antd-modal';
 import fg from 'fast-glob';
 import * as path from 'path';
 import { act } from 'react-dom/test-utils';
 import { vi } from 'vitest';
+import { render } from './utils';
 
 beforeEach(() => {
   vi.useFakeTimers();
@@ -30,7 +29,7 @@ allExamples.forEach((file) => {
     const Demo = await import(path.join(examplePath, file));
 
     // console.log(`测试组件${dir} DEMO:${demoName}`);
-    const wrapper = render(<Demo.default />, { wrapper: EasyAntdModalProvider });
+    const wrapper = render(<Demo.default />);
     act(() => {
       vi.runAllTimers();
     });

@@ -17,4 +17,7 @@ if (typeof window !== 'undefined') {
       })),
     });
   }
+  // ref: https://github.com/NickColley/jest-axe/issues/147#issuecomment-758804533
+  const { getComputedStyle } = window;
+  window.getComputedStyle = (elt) => getComputedStyle(elt);
 }

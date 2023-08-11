@@ -51,6 +51,7 @@
     }
   },
   "main": "lib/index.js",
+  "unpkg": "dist/easy-antd-modal.min.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
   "files": [

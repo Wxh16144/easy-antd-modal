@@ -17,6 +17,7 @@ function BaseModal(props: BaseModalProps) {
     offsetX,
     offsetY,
     prefixCls: customizePrefixCls,
+    className,
     ...resetProps
   } = props;
 
@@ -45,18 +46,19 @@ function BaseModal(props: BaseModalProps) {
   );
 
   // Compliance with BEM norms
-  const titleCls = [
-    `${dragModalCls}-title__inner`,
-    isDragging && `${dragModalCls}-title__inner_dragging`,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const modalCls = [className, isDragging && `${dragModalCls}_dragging`].filter(Boolean).join(' ');
 
   return (
     <Modal
       prefixCls={dragModalCls}
+      className={modalCls}
       title={
-        <div {...listeners} {...attributes} style={{ cursor: 'move' }} className={titleCls}>
+        <div
+          {...listeners}
+          {...attributes}
+          style={{ cursor: 'move' }}
+          className={`${dragModalCls}-title__inner`}
+        >
           {title}
         </div>
       }

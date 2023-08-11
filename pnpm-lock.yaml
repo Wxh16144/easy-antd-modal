@@ -48,6 +48,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.2.7
+      '@types/testing-library__jest-dom':
+        specifier: ^5
+        version: 5.14.9
       '@umijs/lint':
         specifier: ^4
         version: 4.0.74(eslint@8.46.0)(styled-components@6.0.7)(stylelint@15.10.2)(typescript@5.1.6)

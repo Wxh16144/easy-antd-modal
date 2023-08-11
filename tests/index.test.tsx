@@ -37,7 +37,7 @@ describe('Modal', () => {
     );
 
     expect(screen.getByText('I ❤️ antd')).toBeInTheDocument();
-    const mask = document.querySelector('.ant-modal-wrap');
+    const mask = document.querySelector('.easy-ant-modal-wrap');
     expect(mask).toBeTruthy();
     fireEvent.click(mask!);
     await waitFakeTimer();

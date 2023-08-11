@@ -16,4 +16,5 @@ export default defineConfig({
   publicPath: isProdSite ? `/${name}/` : '/',
   html2sketch: {},
   mfsu: false,
+  outputPath: '.doc',
 });

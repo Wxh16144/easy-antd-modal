@@ -13,6 +13,7 @@ export default defineConfig({
     },
     coverage: {
       reporter: ['text', 'text-summary', 'json', 'lcov'],
+      include: ['src/**/*'],
     },
   },
 });

@@ -26,6 +26,9 @@
       "import": "./es/index.js",
       "require": "./lib/index.js"
     },
+    "./es/*": "./es/*",
+    "./lib/*": "./lib/*",
+    "./dist/*": "./dist/*",
     "./mobile": {
       "types": "./es/mobile/index.d.ts",
       "import": "./es/mobile/index.js",
@@ -48,9 +51,11 @@
     }
   },
   "main": "lib/index.js",
+  "unpkg": "dist/easy-antd-modal.min.js",
   "module": "es/index.js",
-  "types": "lib/index.d.ts",
+  "types": "es/index.d.ts",
   "files": [
+    "dist",
     "lib",
     "es"
   ],
@@ -58,7 +63,7 @@
     "build": "father build",
     "build:watch": "father dev",
     "ci": "npm run lint && npm run type-check && npm run doctor && npm run build",
-    "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache",
+    "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache .doc",
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",

@@ -163,6 +163,54 @@ describe('Modal', () => {
     expect(unMount).toHaveBeenCalled();
   });
 
+  it('点击弹窗 footer 的 ok 按钮会触发 onOk， 并且关闭弹窗', async () => {
+    const onOk = vi.fn();
+    const { getByRole } = render(
+      <Modal title="easy-antd-modal" defaultOpen onOk={onOk} destroyOnClose>
+        I ❤️ antd
+      </Modal>,
+    );
+
+    const okButton = getByRole('button', { name: 'OK' });
+    expect(okButton).toBeTruthy();
+    fireEvent.click(okButton!);
+    await waitFakeTimer();
+    expect(onOk).toHaveBeenCalled();
+    expect(screen.queryByText('I ❤️ antd')).not.toBeInTheDocument();
+  });
+
+  it('Modal content 支持回调函数，回调函数的第一个参数为 ModalEnhancedAction', async () => {
+    const propsEnhancer = vi.fn();
+
+    render(
+      <Modal defaultOpen destroyOnClose>
+        {
+          ((props: PropsWithModalEnhanced) => {
+            propsEnhancer(props);
+            return <Button onClick={() => props.enhancedAction?.close()}>Close Modal</Button>;
+          }) as any
+        }
+      </Modal>,
+    );
+
+    expect(propsEnhancer).toHaveBeenCalled();
+    // props 中包含 enhancedAction
+    expect(propsEnhancer.mock.calls[0][0]).toEqual(
+      expect.objectContaining({
+        enhancedAction: expect.objectContaining({
+          open: expect.any(Function),
+          close: expect.any(Function),
+        }),
+      }),
+    );
+
+    const closeModalButton = screen.getByText('Close Modal');
+    expect(closeModalButton).toBeTruthy();
+    fireEvent.click(closeModalButton!);
+    await waitFakeTimer();
+    expect(closeModalButton).not.toBeInTheDocument();
+  });
+
   describe('props.prefixCls', () => {
     it('默认', () => {
       const { getByRole } = render(<Modal defaultOpen>I ❤️ antd</Modal>);

@@ -1,8 +1,7 @@
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
-import { ConfigProvider as AntdConfigProvider } from 'antd';
-import * as React from 'react';
 import type { DragModalProps } from '.';
+import usePrefixCls from '../hooks/usePrefixCls';
 import Modal from '../modal';
 
 export interface BaseModalProps extends DragModalProps {
@@ -11,20 +10,9 @@ export interface BaseModalProps extends DragModalProps {
 }
 
 function BaseModal(props: BaseModalProps) {
-  const {
-    modalRender,
-    title,
-    offsetX,
-    offsetY,
-    prefixCls: customizePrefixCls,
-    className,
-    ...resetProps
-  } = props;
+  const { modalRender, title, offsetX, offsetY, className, ...resetProps } = props;
 
-  const { getPrefixCls } = React.useContext(AntdConfigProvider.ConfigContext);
-  const dragModalCls = customizePrefixCls
-    ? `${customizePrefixCls}`
-    : `easy-${getPrefixCls()}-drag-modal`;
+  const prefixCls = usePrefixCls('drag-modal', props.prefixCls);
 
   const { attributes, isDragging, listeners, setNodeRef, transform } = useDraggable({
     id: 'easy-antd-modal-draggable-modal',
@@ -39,31 +27,31 @@ function BaseModal(props: BaseModalProps) {
         top: offsetY,
         left: offsetX,
       }}
-      className={`${dragModalCls}-content__wrapper`}
+      className={`${prefixCls}-content__wrapper`}
     >
       {modalRender?.(rawNode) ?? rawNode}
     </div>
   );
 
   // Compliance with BEM norms
-  const modalCls = [className, isDragging && `${dragModalCls}_dragging`].filter(Boolean).join(' ');
+  const modalCls = [className, isDragging && `${prefixCls}_dragging`].filter(Boolean).join(' ');
 
   return (
     <Modal
-      prefixCls={dragModalCls}
+      {...resetProps}
+      prefixCls={prefixCls}
       className={modalCls}
       title={
         <div
           {...listeners}
           {...attributes}
           style={{ cursor: 'move' }}
-          className={`${dragModalCls}-title__inner`}
+          className={`${prefixCls}-title__inner`}
         >
           {title}
         </div>
       }
       modalRender={mergeModalRender}
-      {...resetProps}
     />
   );
 }

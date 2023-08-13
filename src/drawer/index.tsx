@@ -1,14 +1,12 @@
 import type { DrawerProps as AntdDrawerProps } from 'antd';
-import { ConfigProvider as AntdConfigProvider, Drawer as AntdDrawer } from 'antd';
-import * as React from 'react';
+import { Drawer as AntdDrawer } from 'antd';
 import { UseModalEnhancedProps, useModalEnhanced } from '../hooks';
+import usePrefixCls from '../hooks/usePrefixCls';
 
 export type DrawerProps = Omit<AntdDrawerProps, 'visible'> & UseModalEnhancedProps;
 
 const Modal = (props: DrawerProps) => {
-  const { getPrefixCls } = React.useContext(AntdConfigProvider.ConfigContext);
-  const drawerCls = props.prefixCls ? `${props.prefixCls}` : `easy-${getPrefixCls()}-drawer`;
-
+  const prefixCls = usePrefixCls('drawer', props.prefixCls);
   const [visible, { close }, { trigger, content }, restProps] = useModalEnhanced(props);
 
   const handleModalCancel: DrawerProps['onClose'] = (event) => {
@@ -19,7 +17,7 @@ const Modal = (props: DrawerProps) => {
   return (
     <>
       {trigger}
-      <AntdDrawer open={visible} {...restProps} onClose={handleModalCancel} prefixCls={drawerCls}>
+      <AntdDrawer open={visible} {...restProps} onClose={handleModalCancel} prefixCls={prefixCls}>
         {content}
       </AntdDrawer>
     </>

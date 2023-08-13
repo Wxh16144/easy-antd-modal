@@ -1,13 +1,12 @@
 import type { ModalProps as AntdModalProps } from 'antd';
-import { ConfigProvider as AntdConfigProvider, Modal as AntdModal } from 'antd';
-import * as React from 'react';
+import { Modal as AntdModal } from 'antd';
 import { UseModalEnhancedProps, useModalEnhanced } from '../hooks';
+import usePrefixCls from '../hooks/usePrefixCls';
 
 export type ModalProps = Omit<AntdModalProps, 'visible'> & UseModalEnhancedProps;
 
 const Modal = (props: ModalProps) => {
-  const { getPrefixCls } = React.useContext(AntdConfigProvider.ConfigContext);
-  const modalCls = props.prefixCls ? `${props.prefixCls}` : `easy-${getPrefixCls()}-modal`;
+  const prefixCls = usePrefixCls('modal', props.prefixCls);
 
   const [visible, { close }, { trigger, content }, restProps] = useModalEnhanced(props);
 
@@ -27,7 +26,7 @@ const Modal = (props: ModalProps) => {
       <AntdModal
         open={visible}
         {...restProps}
-        prefixCls={modalCls}
+        prefixCls={prefixCls}
         onOk={handleModalOk}
         onCancel={handleModalCancel}
       >

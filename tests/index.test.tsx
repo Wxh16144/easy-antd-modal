@@ -162,4 +162,24 @@ describe('Modal', () => {
     expect(onClean).not.toHaveBeenCalled();
     expect(unMount).toHaveBeenCalled();
   });
+
+  describe('props.prefixCls', () => {
+    it('默认', () => {
+      const { getByRole } = render(<Modal defaultOpen>I ❤️ antd</Modal>);
+
+      expect(document.querySelector('.easy-ant-modal')).toBeTruthy();
+      expect(getByRole('dialog')).toMatchSnapshot();
+    });
+
+    it('支持自定义', () => {
+      const { getByRole } = render(
+        <Modal prefixCls="test-prefix" defaultOpen>
+          I ❤️ antd
+        </Modal>,
+      );
+
+      expect(document.querySelector('.test-prefix')).toBeTruthy();
+      expect(getByRole('dialog')).toMatchSnapshot();
+    });
+  });
 });

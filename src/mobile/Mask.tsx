@@ -12,7 +12,7 @@ function Mask(props: MaskProps) {
   };
 
   const handleMaskClose: AntdMMaskProps['afterClose'] = () => {
-    props.afterClose?.();
+    props?.afterClose?.();
     close();
   };
 

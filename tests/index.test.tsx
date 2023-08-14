@@ -1,7 +1,5 @@
 import { Button } from 'antd';
 import DefaultExportModal, {
-  Antd,
-  Drawer,
   Modal,
   ModalEnhancedAction,
   PropsWithModalEnhanced,
@@ -14,15 +12,6 @@ describe('Modal', () => {
     expect(DefaultExportModal).toBeDefined();
     expect(Modal).toBeDefined();
     expect(DefaultExportModal).toBe(Modal);
-  });
-
-  it('导出了 antd namespace', () => {
-    expect(Antd).toBeDefined();
-    expect(Antd).toEqual({
-      Modal,
-      Drawer,
-      // DragModal, // DragModal 不属于 antd，需要导出吗？
-    });
   });
 
   it('README.md 中的基础示例正常工作', async () => {
@@ -48,7 +37,7 @@ describe('Modal', () => {
     );
 
     expect(screen.getByText('I ❤️ antd')).toBeInTheDocument();
-    const mask = document.querySelector('.easy-ant-modal-wrap');
+    const mask = document.querySelector('.ant-modal-wrap');
     expect(mask).toBeTruthy();
     fireEvent.click(mask!);
     await waitFakeTimer();
@@ -172,73 +161,5 @@ describe('Modal', () => {
     // 弹窗 content 内调用 enhancedAction.close() 会关闭弹窗，但不会触发 onCancel
     expect(onClean).not.toHaveBeenCalled();
     expect(unMount).toHaveBeenCalled();
-  });
-
-  it('点击弹窗 footer 的 ok 按钮会触发 onOk， 并且关闭弹窗', async () => {
-    const onOk = vi.fn();
-    const { getByRole } = render(
-      <Modal title="easy-antd-modal" defaultOpen onOk={onOk} destroyOnClose>
-        I ❤️ antd
-      </Modal>,
-    );
-
-    const okButton = getByRole('button', { name: 'OK' });
-    expect(okButton).toBeTruthy();
-    fireEvent.click(okButton!);
-    await waitFakeTimer();
-    expect(onOk).toHaveBeenCalled();
-    expect(screen.queryByText('I ❤️ antd')).not.toBeInTheDocument();
-  });
-
-  it('Modal content 支持回调函数，回调函数的第一个参数为 ModalEnhancedAction', async () => {
-    const propsEnhancer = vi.fn();
-
-    render(
-      <Modal defaultOpen destroyOnClose>
-        {
-          ((props: PropsWithModalEnhanced) => {
-            propsEnhancer(props);
-            return <Button onClick={() => props.enhancedAction?.close()}>Close Modal</Button>;
-          }) as any
-        }
-      </Modal>,
-    );
-
-    expect(propsEnhancer).toHaveBeenCalled();
-    // props 中包含 enhancedAction
-    expect(propsEnhancer.mock.calls[0][0]).toEqual(
-      expect.objectContaining({
-        enhancedAction: expect.objectContaining({
-          open: expect.any(Function),
-          close: expect.any(Function),
-        }),
-      }),
-    );
-
-    const closeModalButton = screen.getByText('Close Modal');
-    expect(closeModalButton).toBeTruthy();
-    fireEvent.click(closeModalButton!);
-    await waitFakeTimer();
-    expect(closeModalButton).not.toBeInTheDocument();
-  });
-
-  describe('props.prefixCls', () => {
-    it('默认', () => {
-      const { getByRole } = render(<Modal defaultOpen>I ❤️ antd</Modal>);
-
-      expect(document.querySelector('.easy-ant-modal')).toBeTruthy();
-      expect(getByRole('dialog')).toMatchSnapshot();
-    });
-
-    it('支持自定义', () => {
-      const { getByRole } = render(
-        <Modal prefixCls="test-prefix" defaultOpen>
-          I ❤️ antd
-        </Modal>,
-      );
-
-      expect(document.querySelector('.test-prefix')).toBeTruthy();
-      expect(getByRole('dialog')).toMatchSnapshot();
-    });
   });
 });

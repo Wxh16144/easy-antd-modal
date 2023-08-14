@@ -1,3 +1,9 @@
+# [1.4.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.3.0...v1.4.1) (2023-08-14)
+
+### Features
+
+- 补充 prefixCls 逻辑 ([#11](https://github.com/Wxh16144/easy-antd-modal/issues/11)) ([e88e9df](https://github.com/Wxh16144/easy-antd-modal/commit/e88e9df32a8d29c4ce3a65facad1cde24a3fc21b))
+
 # [1.4.0-beta.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.3.0...v1.4.0-beta.1) (2023-08-14)
 
 ### Features

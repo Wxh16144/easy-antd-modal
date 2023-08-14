@@ -7,7 +7,7 @@ export interface Actions {
 }
 
 export default function useBoolean(defaultValue = false): [boolean, Actions] {
-  const [state, setState] = React.useState(defaultValue);
+  const [state, setState] = React.useState(!!defaultValue);
 
   const actions: Actions = React.useMemo(() => {
     const setTrue = () => setState(true);

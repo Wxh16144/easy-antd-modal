@@ -1,5 +1,7 @@
 import { Button } from 'antd';
 import DefaultExportModal, {
+  Antd,
+  Drawer,
   Modal,
   ModalEnhancedAction,
   PropsWithModalEnhanced,
@@ -12,6 +14,15 @@ describe('Modal', () => {
     expect(DefaultExportModal).toBeDefined();
     expect(Modal).toBeDefined();
     expect(DefaultExportModal).toBe(Modal);
+  });
+
+  it('导出了 antd namespace', () => {
+    expect(Antd).toBeDefined();
+    expect(Antd).toEqual({
+      Modal,
+      Drawer,
+      // DragModal, // DragModal 不属于 antd，需要导出吗？
+    });
   });
 
   it('README.md 中的基础示例正常工作', async () => {

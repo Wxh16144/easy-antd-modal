@@ -1,3 +1,9 @@
+## [1.4.2](https://github.com/Wxh16144/easy-antd-modal/compare/v1.4.1...v1.4.2) (2023-08-29)
+
+### Bug Fixes
+
+- 修复 drawer 类型未导出错误 ([#13](https://github.com/Wxh16144/easy-antd-modal/issues/13)) ([002e26c](https://github.com/Wxh16144/easy-antd-modal/commit/002e26c42282d43d908173b56a299857297454de))
+
 # [1.4.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.3.0...v1.4.1) (2023-08-14)
 
 ### Features

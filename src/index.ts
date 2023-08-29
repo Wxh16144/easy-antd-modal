@@ -8,6 +8,7 @@ export * from './types';
 export * from './util';
 
 export * from './drag-modal';
+export * from './drawer';
 export * from './modal';
 
 export {

@@ -67,6 +67,7 @@
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",
+    "postinstall": "[ -f examples/with-antd4/src/App.tsx ] || ln -s ../../with-antd5/src/App.tsx examples/with-antd4/src/App.tsx",
     "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && npm run setup",
     "prepublishOnly": "npm run doctor && npm run build",
@@ -135,7 +136,7 @@
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },
-  "packageManager": "pnpm@8.0.0",
+  "packageManager": "pnpm@8.6.2",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

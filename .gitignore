@@ -41,3 +41,6 @@ screenshot
 example/.temp/*
 .eslintcache
 techUI*
+
+# Symbolic link
+examples/with-antd4/src/App.tsx

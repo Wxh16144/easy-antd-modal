@@ -67,6 +67,7 @@
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "father doctor",
+    "postinstall": "[ -f examples/with-antd4/src/App.tsx ] || ln -s ../../with-antd5/src/App.tsx examples/with-antd4/src/App.tsx",
     "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && npm run setup",
     "prepublishOnly": "npm run doctor && npm run build",

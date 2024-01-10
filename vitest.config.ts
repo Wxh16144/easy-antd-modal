@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import { defineConfig } from 'vitest/config';
 import { name } from './package.json';
 
@@ -8,8 +9,7 @@ export default defineConfig({
     globals: true,
     css: true,
     alias: {
-      '@': './src',
-      [name]: './src',
+      [name]: resolve(__dirname, './src'),
     },
     coverage: {
       reporter: ['text', 'text-summary', 'json', 'lcov'],

@@ -1,3 +1,9 @@
+# [1.5.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.4.2...v1.5.0) (2024-01-10)
+
+### Features
+
+- 克隆 antd 静态方法 ([#15](https://github.com/Wxh16144/easy-antd-modal/issues/15)) ([2f8cdac](https://github.com/Wxh16144/easy-antd-modal/commit/2f8cdacd48efa318d563302f399947f3b6a2e46b))
+
 ## [1.4.2](https://github.com/Wxh16144/easy-antd-modal/compare/v1.4.1...v1.4.2) (2023-08-29)
 
 ### Bug Fixes

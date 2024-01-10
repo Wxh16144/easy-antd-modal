@@ -1,4 +1,4 @@
-import { Button, Typography, version } from 'antd';
+import { Button, Space, Typography, version } from 'antd';
 import { DragModal, Drawer, Modal } from 'easy-antd-modal';
 
 export default () => (
@@ -22,5 +22,28 @@ export default () => (
     <DragModal title="easy-antd-modal" trigger={<Button type="primary">DragModal</Button>}>
       I ❤️ antd
     </DragModal>
+
+    <br />
+    <br />
+
+    <Button
+      danger
+      onClick={() => {
+        Modal.success({
+          title: 'success',
+          content: (
+            <Space>
+              不推荐使用!!!
+              <Button type="link" href="https://ant.design/docs/blog/why-not-static-cn">
+                为什么?
+              </Button>
+            </Space>
+          ),
+          onOk: () => console.log('success'),
+        });
+      }}
+    >
+      Static Methods
+    </Button>
   </>
 );

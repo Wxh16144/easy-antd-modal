@@ -1,3 +1,9 @@
+## [1.5.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.5.0...v1.5.1) (2024-01-12)
+
+### Bug Fixes
+
+- 修复部分机器安装依赖失败问题 ([#16](https://github.com/Wxh16144/easy-antd-modal/issues/16)) ([397cb22](https://github.com/Wxh16144/easy-antd-modal/commit/397cb2225b466c7a276ad012be5003926d516edd))
+
 # [1.5.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.4.2...v1.5.0) (2024-01-10)
 
 ### Features

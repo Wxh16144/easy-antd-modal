@@ -1,15 +1,30 @@
 import type { ModalProps as AntdModalProps } from 'antd';
 import { Modal as AntdModal } from 'antd';
-import { UseModalEnhancedProps, useModalEnhanced } from '../hooks';
+import type { PropsWithModalEnhanced, UseModalEnhancedProps } from '../hooks';
+import { useModalEnhanced } from '../hooks';
 import usePrefixCls from '../hooks/usePrefixCls';
+import type { AnyObj } from '../types';
+
+/** @internal */
+type CloseCallback = Pick<ModalProps, 'onCancel'>;
 
 export type ModalProps = Omit<AntdModalProps, 'visible' | 'children'> & UseModalEnhancedProps;
 
+/**
+ * @description 方便用户自定义 `Modal` 的 `props`
+ * @since 1.6.0
+ */
+export type ModalContentPropsWithEnhanced<P extends AnyObj = AnyObj> = PropsWithModalEnhanced<
+  P,
+  CloseCallback
+>;
+
+/** @see [easy-antd-modal#Modal](https://github.com/Wxh16144/easy-antd-modal/blob/master/src/modal/index.tsx) */
 const Modal = (props: ModalProps) => {
   const prefixCls = usePrefixCls('modal', props.prefixCls);
 
   const [visible, { close }, { trigger, content }, restProps] =
-    useModalEnhanced<Pick<ModalProps, 'onCancel'>>(props);
+    useModalEnhanced<CloseCallback>(props);
 
   const handleModalOk: ModalProps['onOk'] = (event) => {
     props.onOk?.(event);

@@ -4,10 +4,12 @@ import type { AnyFunction, AnyObj } from '../types';
 import { has, isDOMTypeElement, isElement, omit, useLatestFunc } from '../util';
 import useBoolean from './useBoolean';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type PropsWithModalEnhanced<T extends AnyObj = {}> = {
-  enhancedAction?: ModalEnhancedAction;
-} & T;
+export type PropsWithModalEnhanced<
+  P extends AnyObj = AnyObj,
+  CloseCB extends FunctionMap = AnyObj,
+> = {
+  enhancedAction?: ModalEnhancedAction<CloseCB>;
+} & P;
 
 type TriggerType = React.ReactNode;
 type ContentType =

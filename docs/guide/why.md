@@ -27,3 +27,7 @@ Ant Design 的 Modal 组件提供了非常多的 API 以便于我们可以灵活
 针对问题 1, 2, 3 封装了 [useModalEnhanced](/api/use-modal-enhanced) hook, 支持对 antd 提供的 API 进行封装, 不需要维护 open 状态, 以及绑定打开事件, 也不需要在 onOk 和 onCancel 中手动修改 open 状态, 一切都是自动的, 代码变得更加优雅。
 
 问题 4 属于一个新功能, 直接基于前面的 1, 2, 3 再次封装, 使得 Modal 可以拖拽。
+
+:::info{title=不是银弹}
+深知**一千个人眼中有一千个哈姆雷特**, 所以没有绝对好的方案，只有更适合自己的。 [看看更多 FAQ ](../faq.md)
+:::

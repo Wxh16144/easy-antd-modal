@@ -3,7 +3,7 @@ import { Drawer as AntdDrawer } from 'antd';
 import { UseModalEnhancedProps, useModalEnhanced } from '../hooks';
 import usePrefixCls from '../hooks/usePrefixCls';
 
-export type DrawerProps = Omit<AntdDrawerProps, 'visible'> & UseModalEnhancedProps;
+export type DrawerProps = Omit<AntdDrawerProps, 'visible' | 'children'> & UseModalEnhancedProps;
 
 const Modal = (props: DrawerProps) => {
   const prefixCls = usePrefixCls('drawer', props.prefixCls);

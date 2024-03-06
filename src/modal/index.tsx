@@ -3,7 +3,7 @@ import { Modal as AntdModal } from 'antd';
 import { UseModalEnhancedProps, useModalEnhanced } from '../hooks';
 import usePrefixCls from '../hooks/usePrefixCls';
 
-export type ModalProps = Omit<AntdModalProps, 'visible'> & UseModalEnhancedProps;
+export type ModalProps = Omit<AntdModalProps, 'visible' | 'children'> & UseModalEnhancedProps;
 
 const Modal = (props: ModalProps) => {
   const prefixCls = usePrefixCls('modal', props.prefixCls);

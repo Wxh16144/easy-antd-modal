@@ -1,3 +1,9 @@
+# [1.6.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.5.1...v1.6.0) (2024-03-06)
+
+### Features
+
+- close 支持回调外部 props 方法 ([#19](https://github.com/Wxh16144/easy-antd-modal/issues/19)) ([afec80c](https://github.com/Wxh16144/easy-antd-modal/commit/afec80ca37dc0379c1c0708496e244921908c461))
+
 ## [1.5.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.5.0...v1.5.1) (2024-01-12)
 
 ### Bug Fixes

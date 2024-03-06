@@ -265,5 +265,40 @@ describe('Modal', () => {
         expect(onCancel).toHaveBeenCalled();
       });
     });
+
+    // easy-antd-modal actionRef.close() 也可以可选的触发 onCancel
+    describe('easy-antd-modal', () => {
+      it('actionRef.close() 不触发', async () => {
+        const onClean = vi.fn();
+        const ref = React.createRef<ModalEnhancedAction>();
+
+        render(
+          <Modal defaultOpen onCancel={onClean} actionRef={ref}>
+            I ❤️ antd
+          </Modal>,
+        );
+
+        ref.current!.close();
+        await waitFakeTimer();
+        expect(onClean).not.toHaveBeenCalled();
+      });
+
+      // feature: 1.6.0+
+      it('actionRef.close(`onCancel`) 触发', async () => {
+        const onClean = vi.fn();
+        const ref = React.createRef<ModalEnhancedAction>();
+
+        render(
+          <Modal defaultOpen onCancel={onClean} actionRef={ref}>
+            I ❤️ antd
+          </Modal>,
+        );
+
+        ref.current!.close('onCancel', 'foo', 'bar');
+        await waitFakeTimer();
+        expect(onClean).toHaveBeenCalled();
+        expect(onClean).toHaveBeenCalledWith('foo', 'bar');
+      });
+    });
   });
 });

@@ -8,7 +8,8 @@ export type ModalProps = Omit<AntdModalProps, 'visible'> & UseModalEnhancedProps
 const Modal = (props: ModalProps) => {
   const prefixCls = usePrefixCls('modal', props.prefixCls);
 
-  const [visible, { close }, { trigger, content }, restProps] = useModalEnhanced(props);
+  const [visible, { close }, { trigger, content }, restProps] =
+    useModalEnhanced<Pick<ModalProps, 'onCancel'>>(props);
 
   const handleModalOk: ModalProps['onOk'] = (event) => {
     props.onOk?.(event);
@@ -16,8 +17,7 @@ const Modal = (props: ModalProps) => {
   };
 
   const handleModalCancel: ModalProps['onCancel'] = (event) => {
-    props.onCancel?.(event);
-    close();
+    close('onCancel', event);
   };
 
   return (

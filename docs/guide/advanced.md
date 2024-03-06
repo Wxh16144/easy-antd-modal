@@ -1,7 +1,8 @@
 ---
-title: 进阶使用
+title: 内部关闭
 group:
-  title: 快速上手
+  title: 进阶使用
+  order: 1
 order: 4
 ---
 

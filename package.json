@@ -109,7 +109,7 @@
     "commitlint": "^17",
     "concurrently": "^7",
     "cross-env": "^7",
-    "dumi": "^2",
+    "dumi": "^2.2.17",
     "dumi-theme-antd-style": "latest",
     "eslint": "^8",
     "fast-glob": "^3.3.1",

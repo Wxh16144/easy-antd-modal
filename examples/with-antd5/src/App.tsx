@@ -1,5 +1,21 @@
-import { Button, Space, Typography, version } from 'antd';
-import { DragModal, Drawer, Modal } from 'easy-antd-modal';
+import { Button, Divider, Space, Typography, version } from 'antd';
+import type {
+  DrawerContentPropsWithEnhanced,
+  ModalContentPropsWithEnhanced,
+} from 'easy-antd-modal';
+import { DragModal, Drawer, EasyAntdModalProvider, Modal } from 'easy-antd-modal';
+
+const ModalContent = ({ enhancedAction }: ModalContentPropsWithEnhanced) => (
+  <button type="button" onClick={(event) => enhancedAction?.close('onCancel', event)}>
+    Close(ModalContent)
+  </button>
+);
+
+const DrawerContent = ({ enhancedAction }: DrawerContentPropsWithEnhanced) => (
+  <button type="button" onClick={(event) => enhancedAction?.close('onClose', event)}>
+    Close(DrawerContent)
+  </button>
+);
 
 export default () => (
   <>
@@ -23,9 +39,20 @@ export default () => (
       I ❤️ antd
     </DragModal>
 
-    <br />
-    <br />
+    <Divider>Provider</Divider>
 
+    <EasyAntdModalProvider triggerProps="children" contentProps="content">
+      <Modal content="I ❤️ antd">
+        <Button type="primary">Modal(Provider)</Button>
+      </Modal>
+      <br />
+      <br />
+      <Drawer content="I ❤️ antd">
+        <Button type="primary">Drawer(Provider)</Button>
+      </Drawer>
+    </EasyAntdModalProvider>
+
+    <Divider>1.5.0</Divider>
     <Button
       danger
       onClick={() => {
@@ -45,5 +72,23 @@ export default () => (
     >
       Static Methods
     </Button>
+
+    <Divider>1.6.0</Divider>
+    <Modal
+      trigger={<Button>Open Show ModalContent</Button>}
+      onCancel={(event) => console.log('<Modal /> onCancel', { event })}
+    >
+      <ModalContent />
+    </Modal>
+
+    <br />
+    <br />
+
+    <Drawer
+      trigger={<Button>Open Show DrawerContent</Button>}
+      onClose={(event) => console.log('<Drawer /> onClose', { event })}
+    >
+      <DrawerContent />
+    </Drawer>
   </>
 );

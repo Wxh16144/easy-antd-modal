@@ -2,7 +2,7 @@
 title: 静态方法
 group:
   title: Legacy
-order: 5
+  order: 99
 ---
 
 ## 静态方法

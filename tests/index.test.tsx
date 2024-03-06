@@ -241,4 +241,64 @@ describe('Modal', () => {
       expect(getByRole('dialog')).toMatchSnapshot();
     });
   });
+
+  describe('props.onCancel', () => {
+    // 根据官方文档 onClean 事件是 点击遮罩层或右上角叉或取消按钮的回调
+    describe('官方文档', () => {
+      it.each([
+        ['点击遮罩层', '[class$="ant-modal-wrap"]'],
+        ['点击右上角叉', '[class$="ant-modal-close"]'],
+        ['点击取消按钮', '.ant-btn.cancel-button'],
+      ])('%s', async (_, className) => {
+        const onCancel = vi.fn();
+
+        render(
+          <Modal defaultOpen onCancel={onCancel} cancelButtonProps={{ className: 'cancel-button' }}>
+            I ❤️ antd
+          </Modal>,
+        );
+
+        const node = document.querySelector(className);
+        expect(node).toBeTruthy();
+        fireEvent.click(node!);
+        await waitFakeTimer();
+        expect(onCancel).toHaveBeenCalled();
+      });
+    });
+
+    // easy-antd-modal actionRef.close() 也可以可选的触发 onCancel
+    describe('easy-antd-modal', () => {
+      it('actionRef.close() 不触发', async () => {
+        const onClean = vi.fn();
+        const ref = React.createRef<ModalEnhancedAction>();
+
+        render(
+          <Modal defaultOpen onCancel={onClean} actionRef={ref}>
+            I ❤️ antd
+          </Modal>,
+        );
+
+        ref.current!.close();
+        await waitFakeTimer();
+        expect(onClean).not.toHaveBeenCalled();
+      });
+
+      // feature: 1.6.0+
+      it('actionRef.close(`onCancel`) 触发', async () => {
+        const onClean = vi.fn();
+        const ref = React.createRef<ModalEnhancedAction>();
+
+        render(
+          <Modal defaultOpen onCancel={onClean} actionRef={ref}>
+            I ❤️ antd
+          </Modal>,
+        );
+
+        ref.current!.close('onCancel', 'foo', 'bar');
+        await waitFakeTimer();
+        expect(onClean).toHaveBeenCalled();
+        expect(onClean).toHaveBeenCalledWith('foo', 'bar');
+      });
+    });
+  });
 });

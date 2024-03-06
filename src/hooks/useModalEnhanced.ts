@@ -1,13 +1,15 @@
 import React from 'react';
 import { useEasyAntdModal } from '../context';
 import type { AnyFunction, AnyObj } from '../types';
-import { isDOMTypeElement, isElement, omit } from '../util';
+import { has, isDOMTypeElement, isElement, omit, useLatestFunc } from '../util';
 import useBoolean from './useBoolean';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type PropsWithModalEnhanced<T extends AnyObj = {}> = {
-  enhancedAction?: ModalEnhancedAction;
-} & T;
+export type PropsWithModalEnhanced<
+  P extends AnyObj = AnyObj,
+  CloseCB extends FunctionMap = AnyObj,
+> = {
+  enhancedAction?: ModalEnhancedAction<CloseCB>;
+} & P;
 
 type TriggerType = React.ReactNode;
 type ContentType =
@@ -24,16 +26,42 @@ export interface UseModalEnhancedProps {
   children?: ContentType | TriggerType;
 }
 
-export interface ModalEnhancedAction {
-  close: () => void;
+type FunctionMap = Record<string, AnyFunction>;
+
+/** `v1.6.0+` */
+type EnhancedClose<CloseCB extends FunctionMap> = {
+  <CBN extends keyof CloseCB>(callbackName: CBN, ...restArgs: Parameters<CloseCB[CBN]>): void;
+  // 这里的 `callbackName` 是可选的，因为有些场景下，不需要回调， TS 类型太复杂了，所以这里不做强制要求
+  <CBN extends keyof CloseCB>(callbackName?: CBN): void;
+};
+
+/** `earlier ~ v1.5.x` */
+type LegacyClose = () => void;
+
+export interface ModalEnhancedAction<CloseCB extends FunctionMap = any> {
+  /**
+   * 关闭弹窗。
+   * 1. `earlier ~ v1.5.x` 版本中，`close` 类型为 {@link LegacyClose}
+   *
+   * 2. `v1.6.0+` 版本中，`close` 类型为 {@link EnhancedClose}
+   * 它支持传入回调函数名，以及回调函数的参数。可实现更多的功能。 比如：[#18](https://github.com/Wxh16144/easy-antd-modal/issues/18)
+   */
+  close: EnhancedClose<CloseCB> | LegacyClose;
   open: () => void;
 }
 
-function useModalEnhanced(props: UseModalEnhancedProps = {}) {
+function useModalEnhanced<CloseCB extends FunctionMap = any>(props: UseModalEnhancedProps = {}) {
   const { onClick, actionRef: actionRefProp, defaultOpen } = props;
+  const [visible, { setTrue: open, setFalse }] = useBoolean(defaultOpen);
 
-  const [visible, { setTrue: open, setFalse: close }] = useBoolean(defaultOpen);
-  const actionRef = React.useRef<ModalEnhancedAction>({ open, close });
+  const close = useLatestFunc<EnhancedClose<CloseCB>>((callbackName, ...restArgs) => {
+    setFalse();
+    if (callbackName && has(props, callbackName)) {
+      (props as AnyObj)[callbackName](...restArgs);
+    }
+  });
+
+  const actionRef = React.useRef<ModalEnhancedAction<CloseCB>>({ open, close });
   const { triggerProps, contentProps } = useEasyAntdModal();
 
   const mergedTrigger = props[triggerProps!] as TriggerType;

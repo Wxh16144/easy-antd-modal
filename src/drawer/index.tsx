@@ -7,11 +7,11 @@ export type DrawerProps = Omit<AntdDrawerProps, 'visible'> & UseModalEnhancedPro
 
 const Modal = (props: DrawerProps) => {
   const prefixCls = usePrefixCls('drawer', props.prefixCls);
-  const [visible, { close }, { trigger, content }, restProps] = useModalEnhanced(props);
+  const [visible, { close }, { trigger, content }, restProps] =
+    useModalEnhanced<Pick<DrawerProps, 'onClose'>>(props);
 
   const handleModalCancel: DrawerProps['onClose'] = (event) => {
-    props.onClose?.(event);
-    close();
+    close('onClose', event);
   };
 
   return (

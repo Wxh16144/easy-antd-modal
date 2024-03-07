@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEasyAntdModal } from '../context';
 import type { AnyFunction, AnyObj } from '../types';
-import { has, isDOMTypeElement, isElement, omit, useLatestFunc } from '../util';
+import { has, isDOMTypeElement, isElement, omit } from '../util';
 import useBoolean from './useBoolean';
+import useLatestFunc from './useLatestFunc';
 
 export type PropsWithModalEnhanced<
   P extends AnyObj = AnyObj,

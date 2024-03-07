@@ -29,4 +29,12 @@ describe('export', () => {
       ]
     `);
   });
+
+  describe('mobile', () => {
+    it('should work', async () => {
+      const all = await import('easy-antd-modal/mobile');
+
+      expect(Object.keys(all)).toMatchSnapshot();
+    });
+  });
 });

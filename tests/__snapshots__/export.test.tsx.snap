@@ -1,5 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`export > mobile > should work 1`] = `
+[
+  "Modal",
+  "Mask",
+  "Popup",
+  "Dialog",
+]
+`;
+
 exports[`export > should work 1`] = `
 [
   "useBoolean",

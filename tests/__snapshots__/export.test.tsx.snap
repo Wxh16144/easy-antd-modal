@@ -18,13 +18,13 @@ exports[`export > should work 1`] = `
   "omit",
   "isElement",
   "isDOMTypeElement",
-  "AntdMobile",
   "DragModal",
   "Drawer",
   "EasyAntdModalProvider",
   "Modal",
   "useEasyAntdModal",
   "default",
+  "AntdMobile",
   "Antd",
 ]
 `;

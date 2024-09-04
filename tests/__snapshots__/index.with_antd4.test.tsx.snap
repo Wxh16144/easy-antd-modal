@@ -8,7 +8,6 @@ exports[`Modal with antd4 > props.prefixCls > 支持自定义 1`] = `
   style="width: 520px;"
 >
   <div
-    aria-hidden="true"
     style="width: 0px; height: 0px; overflow: hidden; outline: none;"
     tabindex="0"
   />
@@ -72,7 +71,6 @@ exports[`Modal with antd4 > props.prefixCls > 支持自定义 1`] = `
     </div>
   </div>
   <div
-    aria-hidden="true"
     style="width: 0px; height: 0px; overflow: hidden; outline: none;"
     tabindex="0"
   />
@@ -87,7 +85,6 @@ exports[`Modal with antd4 > props.prefixCls > 默认 atnd@4 不会添加 easy- 1
   style="width: 520px;"
 >
   <div
-    aria-hidden="true"
     style="width: 0px; height: 0px; overflow: hidden; outline: none;"
     tabindex="0"
   />
@@ -151,7 +148,6 @@ exports[`Modal with antd4 > props.prefixCls > 默认 atnd@4 不会添加 easy- 1
     </div>
   </div>
   <div
-    aria-hidden="true"
     style="width: 0px; height: 0px; overflow: hidden; outline: none;"
     tabindex="0"
   />

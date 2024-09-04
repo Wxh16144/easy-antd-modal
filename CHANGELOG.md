@@ -1,3 +1,9 @@
+## [1.6.2](https://github.com/Wxh16144/easy-antd-modal/compare/v1.6.1...v1.6.2) (2024-09-04)
+
+### Bug Fixes
+
+- **deps:** Limit minimum dependency ([#21](https://github.com/Wxh16144/easy-antd-modal/issues/21)) ([957f894](https://github.com/Wxh16144/easy-antd-modal/commit/957f8944e6ba374cf42a915e0b35f01a55fe53a1))
+
 ## [1.6.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.6.0...v1.6.1) (2024-03-07)
 
 ### Bug Fixes

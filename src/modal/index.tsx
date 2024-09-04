@@ -2,6 +2,7 @@ import type { ModalProps as AntdModalProps } from 'antd';
 import { Modal as AntdModal } from 'antd';
 import type { PropsWithModalEnhanced, UseModalEnhancedProps } from '../hooks';
 import { useModalEnhanced } from '../hooks';
+import useMergeOpen from '../hooks/useMergeOpen';
 import usePrefixCls from '../hooks/usePrefixCls';
 import type { AnyObj } from '../types';
 
@@ -35,11 +36,16 @@ const Modal = (props: ModalProps) => {
     close('onCancel', event);
   };
 
+  const openProp = useMergeOpen({
+    visible,
+    ...props,
+  });
+
   return (
     <>
       {trigger}
       <AntdModal
-        open={visible}
+        {...openProp}
         {...restProps}
         prefixCls={prefixCls}
         onOk={handleModalOk}

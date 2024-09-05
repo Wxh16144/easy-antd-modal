@@ -1,3 +1,9 @@
+# [1.7.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.6.2...v1.7.0) (2024-09-05)
+
+### Features
+
+- 改进 antd 依赖范围限制 ([#22](https://github.com/Wxh16144/easy-antd-modal/issues/22)) ([083ab31](https://github.com/Wxh16144/easy-antd-modal/commit/083ab31a05ca4770955f6ea0e3899152d5f941f8))
+
 ## [1.6.2](https://github.com/Wxh16144/easy-antd-modal/compare/v1.6.1...v1.6.2) (2024-09-04)
 
 ### Bug Fixes

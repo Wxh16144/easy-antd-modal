@@ -132,9 +132,11 @@
     "@dnd-kit/modifiers": "^6",
     "@dnd-kit/utilities": "^3",
     "antd": "^4.7.0 || ^5.3.0",
-    "antd-mobile": "^5",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
+  },
+  "optionalDependencies": {
+    "antd-mobile": "^5"
   },
   "packageManager": "pnpm@8.6.2",
   "publishConfig": {

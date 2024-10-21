@@ -30,8 +30,10 @@ type CloseCallback = Pick<ModalProps, 'onCancel'>;
  * ```
  */
 export interface ModalProps
-  extends Omit<AntdModalProps, 'visible' | 'children'>,
-    UseModalEnhancedProps {}
+  extends Omit<AntdModalProps, 'visible' | 'children' | 'open'>,
+    UseModalEnhancedProps {
+  open?: boolean; // 为了老版本也有 TS 类型提示
+}
 
 /**
  * @description 方便用户自定义 `Modal` 的 `props`

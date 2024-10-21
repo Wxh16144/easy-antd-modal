@@ -4,7 +4,7 @@ import { beforeAll } from 'vitest';
 let useMergeOpen: typeof origin_useMergeOpen;
 
 const caseMap = [
-  [{}, { open: void 0 }],
+  [{}, { open: false }],
   [{ visible: false }, { open: false }],
   [{ open: false }, { open: false }],
   [{ visible: false, open: true }, { open: true }],
@@ -61,7 +61,7 @@ describe('v4.10.2', () => {
   });
 
   it.each([
-    [{}, { visible: void 0 }],
+    [{}, { visible: false }],
     [{ visible: false }, { visible: false }],
     [{ open: false }, { visible: false }],
     [{ visible: false, open: true }, { visible: true }],

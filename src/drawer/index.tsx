@@ -2,7 +2,7 @@ import type { DrawerProps as AntdDrawerProps } from 'antd';
 import { Drawer as AntdDrawer } from 'antd';
 import type { PropsWithModalEnhanced, UseModalEnhancedProps } from '../hooks';
 import { useModalEnhanced } from '../hooks';
-import useMergeOpen from '../hooks/useMergeOpen';
+import useMergeOpen, { INNER_STATE } from '../hooks/useMergeOpen';
 import usePrefixCls from '../hooks/usePrefixCls';
 import type { AnyObj } from '../types';
 
@@ -53,14 +53,14 @@ const Drawer = (props: DrawerProps) => {
   };
 
   const openProp = useMergeOpen({
-    visible,
+    [INNER_STATE]: visible,
     ...props,
   });
 
   return (
     <>
       {trigger}
-      <AntdDrawer {...openProp} {...restProps} onClose={handleModalCancel} prefixCls={prefixCls}>
+      <AntdDrawer {...restProps} {...openProp} onClose={handleModalCancel} prefixCls={prefixCls}>
         {content}
       </AntdDrawer>
     </>

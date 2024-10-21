@@ -2,7 +2,7 @@ import type { ModalProps as AntdModalProps } from 'antd';
 import { Modal as AntdModal } from 'antd';
 import type { PropsWithModalEnhanced, UseModalEnhancedProps } from '../hooks';
 import { useModalEnhanced } from '../hooks';
-import useMergeOpen from '../hooks/useMergeOpen';
+import useMergeOpen, { INNER_STATE } from '../hooks/useMergeOpen';
 import usePrefixCls from '../hooks/usePrefixCls';
 import type { AnyObj } from '../types';
 
@@ -30,8 +30,10 @@ type CloseCallback = Pick<ModalProps, 'onCancel'>;
  * ```
  */
 export interface ModalProps
-  extends Omit<AntdModalProps, 'visible' | 'children'>,
-    UseModalEnhancedProps {}
+  extends Omit<AntdModalProps, 'visible' | 'children' | 'open'>,
+    UseModalEnhancedProps {
+  open?: boolean; // 为了老版本也有 TS 类型提示
+}
 
 /**
  * @description 方便用户自定义 `Modal` 的 `props`
@@ -59,7 +61,7 @@ const Modal = (props: ModalProps) => {
   };
 
   const openProp = useMergeOpen({
-    visible,
+    [INNER_STATE]: visible,
     ...props,
   });
 
@@ -67,8 +69,8 @@ const Modal = (props: ModalProps) => {
     <>
       {trigger}
       <AntdModal
-        {...openProp}
         {...restProps}
+        {...openProp}
         prefixCls={prefixCls}
         onOk={handleModalOk}
         onCancel={handleModalCancel}

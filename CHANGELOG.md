@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/Wxh16144/easy-antd-modal/compare/v1.7.0...v1.7.1) (2024-10-21)
+
+### Bug Fixes
+
+- 修复更低版本 visible 会受到 defaultProps 影响错误 ([#24](https://github.com/Wxh16144/easy-antd-modal/issues/24)) ([b491752](https://github.com/Wxh16144/easy-antd-modal/commit/b491752f8cf09c0e6d967555cd03d7cd01a8ad16))
+
 # [1.7.0](https://github.com/Wxh16144/easy-antd-modal/compare/v1.6.2...v1.7.0) (2024-09-05)
 
 ### Features

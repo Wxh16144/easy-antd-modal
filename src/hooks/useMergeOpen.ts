@@ -1,6 +1,10 @@
 import { version } from 'antd';
+import { isNil } from '../util/nil';
+
+export const INNER_STATE = Symbol('__easy_antd_modal_inner_state__');
 
 interface UseMergeOpenProps {
+  [INNER_STATE]?: boolean;
   visible?: boolean;
   open?: boolean;
 }
@@ -17,7 +21,11 @@ export const CAN_USE_OPEN = function canUseOpen() {
 };
 
 const useMergeOpen = (props: UseMergeOpenProps) => {
-  const { visible, open = visible } = props;
+  let { visible, open } = props;
+
+  visible ||= props[INNER_STATE] ?? false;
+
+  if (isNil(open)) open = visible;
 
   const key = CAN_USE_OPEN() ? 'open' : 'visible';
 

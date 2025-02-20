@@ -1,10 +1,10 @@
-import { Popup } from 'easy-antd-modal-m';
 import { fireEvent, render, screen, waitFakeTimer } from '##/tests/utils';
+import { Dialog } from 'easy-antd-modal-m';
 
-describe('Mobile Popup', () => {
+describe('Mobile Dialog', () => {
   it('默认正常工作', async () => {
     const { getByRole } = render(
-      <Popup trigger={<button type="button">open</button>}>content</Popup>,
+      <Dialog trigger={<button type="button">open</button>}>content</Dialog>,
     );
     const button = getByRole('button');
     expect(button).toHaveTextContent('open');
@@ -16,12 +16,12 @@ describe('Mobile Popup', () => {
   it('defaultOpen 正常工作', async () => {
     const onClean = vi.fn();
     const { rerender } = render(
-      <Popup defaultOpen destroyOnClose onClose={onClean}>
+      <Dialog defaultOpen destroyOnClose onClose={onClean}>
         content
-      </Popup>,
+      </Dialog>,
     );
     expect(screen.getByText('content')).toBeInTheDocument();
-    const mask = document.querySelector('.adm-mask');
+    const mask = document.querySelector('.adm-center-popup-mask');
     expect(mask).toBeTruthy();
     fireEvent.click(mask!); // 默认点击不会关闭
     await waitFakeTimer();
@@ -29,9 +29,9 @@ describe('Mobile Popup', () => {
     expect(screen.queryByText('content')).toBeInTheDocument();
 
     rerender(
-      <Popup defaultOpen destroyOnClose closeOnMaskClick onClose={onClean}>
+      <Dialog defaultOpen destroyOnClose closeOnMaskClick onClose={onClean}>
         content
-      </Popup>,
+      </Dialog>,
     );
     fireEvent.click(mask!); // 点击关闭
     await waitFakeTimer();

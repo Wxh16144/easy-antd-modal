@@ -13,7 +13,7 @@
       "@@/*": [".dumi/tmp/*"],
       "##/*": ["*"],
       "easy-antd-modal": ["packages/easy-antd-modal/src/index.tsx"],
-      "easy-antd-modal-m": ["packages/easy-antd-modal-m/src/index.tsx"],
+      "easy-antd-modal-m": ["packages/easy-antd-modal-mobile/src/index.tsx"],
       "@wuxh/use-modal-enhanced": ["packages/hooks/src/index.ts"]
     }
   }

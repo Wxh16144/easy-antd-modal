@@ -1,5 +1,5 @@
-import { Mask } from 'easy-antd-modal-m';
 import { fireEvent, render, waitFakeTimer, waitFor } from '##/tests/utils';
+import { Mask } from 'easy-antd-modal-m';
 
 describe('Mobile Mask', () => {
   it('默认正常工作', async () => {

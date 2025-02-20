@@ -73,7 +73,7 @@ importers:
         version: link:packages/easy-antd-modal
       easy-antd-modal-m:
         specifier: workspace:*
-        version: link:packages/easy-antd-modal-m
+        version: link:packages/easy-antd-modal-mobile
       eslint:
         specifier: ^8
         version: 8.57.1
@@ -243,7 +243,7 @@ importers:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
 
-  packages/easy-antd-modal-m:
+  packages/easy-antd-modal-mobile:
     dependencies:
       '@wuxh/use-modal-enhanced':
         specifier: workspace:*

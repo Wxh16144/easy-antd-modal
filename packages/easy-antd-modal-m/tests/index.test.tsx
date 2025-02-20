@@ -4,6 +4,7 @@ let AntdMobile: any;
 import { Dialog, Mask, Modal, Popup } from 'easy-antd-modal-m';
 
 describe('antd Mobile', () => {
+  // BREAKING CHANGE: 不再导出 AntdMobile
   it.skip('导出正常', () => {
     expect(AntdMobile).toBeDefined();
     ['Dialog', 'Mask', 'Modal', 'Popup'].forEach((key) => {

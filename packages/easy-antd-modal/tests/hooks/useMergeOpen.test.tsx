@@ -1,3 +1,4 @@
+import * as antd from 'antd';
 import origin_useMergeOpen from 'easy-antd-modal';
 import { beforeAll } from 'vitest';
 
@@ -29,6 +30,7 @@ describe('v4.23.0', () => {
   beforeAll(async () => {
     vi.resetModules();
     vi.doMock('antd', () => ({
+      ...antd,
       version: '4.23.0',
     }));
 
@@ -50,10 +52,11 @@ describe('v4.10.2', () => {
   beforeAll(async () => {
     vi.resetModules();
     vi.doMock('antd', () => ({
+      ...antd,
       version: '4.10.2',
     }));
 
-    useMergeOpen = await import('easy-antd-modal/hooks/useMergeOpen').then((m) => m.default);
+    useMergeOpen = await import('easy-antd-modal').then((m) => m.useMergeOpen);
 
     return function cleanup() {
       vi.doUnmock('antd');

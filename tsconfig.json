@@ -1,5 +1,5 @@
 {
-  "include": ["src", "tests", ".dumirc.ts", "*.ts", "docs"],
+  "include": ["tests", ".dumirc.ts", "packages/**/tests/**/*.tsx", "docs"],
   "compilerOptions": {
     "strict": true,
     "declaration": true,
@@ -7,13 +7,14 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "types": ["vitest/globals"],
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "@/*": ["src"],
-      "easy-antd-modal": ["src"],
-      "easy-antd-modal/*": ["src/*", "*"]
+      "##/*": ["*"],
+      "easy-antd-modal": ["packages/easy-antd-modal/src/index.tsx"],
+      "easy-antd-modal-m": ["packages/easy-antd-modal-m/src/index.tsx"],
+      "@wuxh/use-modal-enhanced": ["packages/hooks/src/index.tsx"]
     }
   }
 }

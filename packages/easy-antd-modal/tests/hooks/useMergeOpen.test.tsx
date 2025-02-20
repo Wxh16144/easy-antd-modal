@@ -1,5 +1,5 @@
 import * as antd from 'antd';
-import origin_useMergeOpen from 'easy-antd-modal';
+import { useMergeOpen as origin_useMergeOpen } from 'easy-antd-modal';
 import { beforeAll } from 'vitest';
 
 let useMergeOpen: typeof origin_useMergeOpen;

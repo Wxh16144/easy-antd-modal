@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFakeTimer } from '##/tests/utils';
 import { Button } from 'antd';
 import DefaultExportModal, {
-  Antd,
+  // Antd,
   Drawer,
   Modal,
   ModalEnhancedAction,
@@ -18,6 +18,7 @@ describe('Modal', () => {
 
   // BREAKING CHANGE: v2.0.0
   it.skip('导出了 antd namespace', () => {
+    const Antd: any = {};
     expect(Antd).toBeDefined();
     expect(Antd).toEqual({
       Modal,

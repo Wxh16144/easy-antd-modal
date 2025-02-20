@@ -19,7 +19,7 @@
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "doctor": "pnpm --filter={packages/*} run doctor",
-    "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"packages/*/{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && npm run setup",
     "prepublishOnly": "npm run doctor && npm run build",
     "prettier": "prettier -c --write \"**/**\"",

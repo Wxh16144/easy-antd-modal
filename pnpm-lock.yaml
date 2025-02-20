@@ -41,9 +41,15 @@ importers:
       '@vitest/coverage-v8':
         specifier: latest
         version: 3.0.6(vitest@3.0.6)
+      antd:
+        specifier: ^5
+        version: 5.24.1(react-dom@18.3.1)(react@18.3.1)
       antd-legacy:
         specifier: npm:antd@4.7.0
         version: /antd@4.7.0(react-dom@18.3.1)(react@18.3.1)
+      antd-mobile:
+        specifier: ^5
+        version: 5.38.1(react-dom@18.3.1)(react@18.3.1)
       antd4:
         specifier: npm:antd@4
         version: /antd@4.24.16(react-dom@18.3.1)(react@18.3.1)
@@ -62,6 +68,12 @@ importers:
       dumi-theme-antd-style:
         specifier: latest
         version: 0.31.1(@types/react@18.3.18)(dumi@2.4.18)(react-dom@18.3.1)(react@18.3.1)
+      easy-antd-modal:
+        specifier: workspace:*
+        version: link:packages/easy-antd-modal
+      easy-antd-modal-m:
+        specifier: workspace:*
+        version: link:packages/easy-antd-modal-m
       eslint:
         specifier: ^8
         version: 8.57.1
@@ -3243,7 +3255,6 @@ packages:
       '@react-spring/shared': 9.6.1(react@18.3.1)
       '@react-spring/types': 9.6.1
       react: 18.3.1
-    dev: false
 
   /@react-spring/core@9.6.1(react@18.3.1):
     resolution: {integrity: sha512-3HAAinAyCPessyQNNXe5W0OHzRfa8Yo5P748paPcmMowZ/4sMfaZ2ZB6e5x5khQI8NusOHj8nquoutd6FRY5WQ==}
@@ -3255,11 +3266,9 @@ packages:
       '@react-spring/shared': 9.6.1(react@18.3.1)
       '@react-spring/types': 9.6.1
       react: 18.3.1
-    dev: false
 
   /@react-spring/rafz@9.6.1:
     resolution: {integrity: sha512-v6qbgNRpztJFFfSE3e2W1Uz+g8KnIBs6SmzCzcVVF61GdGfGOuBrbjIcp+nUz301awVmREKi4eMQb2Ab2gGgyQ==}
-    dev: false
 
   /@react-spring/shared@9.6.1(react@18.3.1):
     resolution: {integrity: sha512-PBFBXabxFEuF8enNLkVqMC9h5uLRBo6GQhRMQT/nRTnemVENimgRd+0ZT4yFnAQ0AxWNiJfX3qux+bW2LbG6Bw==}
@@ -3269,11 +3278,9 @@ packages:
       '@react-spring/rafz': 9.6.1
       '@react-spring/types': 9.6.1
       react: 18.3.1
-    dev: false
 
   /@react-spring/types@9.6.1:
     resolution: {integrity: sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==}
-    dev: false
 
   /@react-spring/web@9.6.1(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-X2zR6q2Z+FjsWfGAmAXlQaoUHbPmfuCaXpuM6TcwXPpLE1ZD4A1eys/wpXboFQmDkjnrlTmKvpVna1MjWpZ5Hw==}
@@ -3287,7 +3294,6 @@ packages:
       '@react-spring/types': 9.6.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-    dev: false
 
   /@rollup/rollup-android-arm-eabi@4.34.8:
     resolution: {integrity: sha512-q217OSE8DTp8AFHuNHXo0Y86e1wtlfVrXiAlwkIvGRQv9zbc6mE3sjIVfwI8sYUyNxwOg0j/Vm1RKM04JcWLJw==}
@@ -4993,7 +4999,6 @@ packages:
 
   /@use-gesture/core@10.3.0:
     resolution: {integrity: sha512-rh+6MND31zfHcy9VU3dOZCqGY511lvGcfyJenN4cWZe0u1BH6brBpBddLVXhF2r4BMqWbvxfsbL7D287thJU2A==}
-    dev: false
 
   /@use-gesture/react@10.3.0(react@18.3.1):
     resolution: {integrity: sha512-3zc+Ve99z4usVP6l9knYVbVnZgfqhKah7sIG+PS2w+vpig2v2OLct05vs+ZXMzwxdNCMka8B+8WlOo0z6Pn6DA==}
@@ -5002,7 +5007,6 @@ packages:
     dependencies:
       '@use-gesture/core': 10.3.0
       react: 18.3.1
-    dev: false
 
   /@vercel/ncc@0.33.3:
     resolution: {integrity: sha512-JGZ11QV+/ZcfudW2Cz2JVp54/pJNXbsuWRgSh2ZmmZdQBKXqBtIGrwI1Wyx8nlbzAiEFe7FHi4K1zX4//jxTnQ==}
@@ -5449,11 +5453,9 @@ packages:
 
   /antd-mobile-icons@0.3.0:
     resolution: {integrity: sha512-rqINQpJWZWrva9moCd1Ye695MZYWmqLPE+bY8d2xLRy7iSQwPsinCdZYjpUPp2zL/LnKYSyXxP2ut2A+DC+whQ==}
-    dev: false
 
   /antd-mobile-v5-count@1.0.1:
     resolution: {integrity: sha512-YGsiEDCPUDz3SzfXi6gLZn/HpeSMW+jgPc4qiYUr1fSopg3hkUie2TnooJdExgfiETHefH3Ggs58He0OVfegLA==}
-    dev: false
 
   /antd-mobile@5.38.1(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-1szLVnmu6hz4iJfKFAsCImJkiLe8FV9IoFChXpnLRBz41wrSfjh7FwPuo0AfFfEuTmV2GYS6BNixiuGscHj+iQ==}
@@ -5483,7 +5485,6 @@ packages:
       staged-components: 1.1.3(react@18.3.1)
       tslib: 2.8.1
       use-sync-external-store: 1.4.0(react@18.3.1)
-    dev: false
 
   /antd-style@3.7.1(@types/react@18.3.18)(antd@5.24.1)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-CQOfddVp4aOvBfCepa+Kj2e7ap+2XBINg1Kn2osdE3oQvrD7KJu/K0sfnLcFLkgCJygbxmuazYdWLKb+drPDYA==}
@@ -12011,7 +12012,6 @@ packages:
 
   /nano-memoize@3.0.16:
     resolution: {integrity: sha512-JyK96AKVGAwVeMj3MoMhaSXaUNqgMbCRSQB3trUV8tYZfWEzqUBKdK1qJpfuNXgKeHOx1jv/IEYTM659ly7zUA==}
-    dev: false
 
   /nanoid@3.3.8:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
@@ -14014,7 +14014,6 @@ packages:
       rc-util: 5.44.4(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-    dev: false
 
   /rc-field-form@2.7.0(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-hgKsCay2taxzVnBPZl+1n4ZondsV78G++XVsMIJCAoioMjlMQR9YwAp7JZDIECzIu2Z66R+f4SFIRrO2DjDNAA==}
@@ -14555,7 +14554,6 @@ packages:
       rc-util: 5.44.4(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-    dev: false
 
   /rc-segmented@2.7.0(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-liijAjXz+KnTRVnxxXG2sYDGd6iLL7VpGGdR8gwoxAXy2KglviKCxLWZdjKYJzYzGSUwKDSTdYk8brj54Bn5BA==}
@@ -15750,7 +15748,6 @@ packages:
 
   /runes2@1.1.4:
     resolution: {integrity: sha512-LNPnEDPOOU4ehF71m5JoQyzT2yxwD6ZreFJ7MxZUAoMKNMY1XrAo60H1CUoX5ncSm0rIuKlqn9JZNRrRkNou2g==}
-    dev: false
 
   /rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
@@ -16374,7 +16371,6 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.3.1
-    dev: false
 
   /statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}

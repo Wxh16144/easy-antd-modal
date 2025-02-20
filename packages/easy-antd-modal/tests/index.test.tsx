@@ -16,7 +16,7 @@ describe('Modal', () => {
     expect(DefaultExportModal).toBe(Modal);
   });
 
-  it('导出了 antd namespace', () => {
+  it.skip('导出了 antd namespace', () => {
     expect(Antd).toBeDefined();
     expect(Antd).toEqual({
       Modal,

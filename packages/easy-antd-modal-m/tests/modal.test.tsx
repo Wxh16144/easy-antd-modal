@@ -1,5 +1,5 @@
+import { fireEvent, render, screen, waitFakeTimer } from '##/tests/utils';
 import { Modal } from 'easy-antd-modal-m';
-import { fireEvent, render, screen, waitFakeTimer } from '##tests/utils';
 
 describe('Mobile Modal', () => {
   it('默认正常工作', async () => {

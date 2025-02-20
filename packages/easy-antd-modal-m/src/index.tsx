@@ -9,3 +9,5 @@ export type { PopupProps } from './Popup';
 
 export { default as Dialog } from './Dialog';
 export type { DialogProps } from './Dialog';
+
+export * from '@wuxh/use-modal-enhanced';

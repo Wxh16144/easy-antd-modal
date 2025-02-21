@@ -72,7 +72,7 @@ export default () => (
 
 ## 迭代记录
 
-详情：[CHANGELOG](./CHANGELOG.md)
+详情：[CHANGELOG](./packages//easy-antd-modal/CHANGELOG.md)
 
 ## License
 

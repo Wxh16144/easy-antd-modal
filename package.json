@@ -24,6 +24,7 @@
     "prepublishOnly": "npm run doctor && npm run build",
     "prettier": "prettier -c --write \"**/**\"",
     "release": "multi-semantic-release --ignore-private-packages",
+    "release:local": "pnpm run release --no-ci",
     "setup": "dumi setup && npm run setup:link",
     "setup:link": "[ -f examples/with-antd4/src/App.tsx ] || ln -s ../../with-antd5/src/App.tsx examples/with-antd4/src/App.tsx",
     "start": "dumi dev",

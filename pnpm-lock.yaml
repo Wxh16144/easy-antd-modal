@@ -20,6 +20,9 @@ importers:
       '@semantic-release/git':
         specifier: ^10.0.1
         version: 10.0.1(semantic-release@21.1.2)
+      '@semrel-extra/npm':
+        specifier: v1
+        version: 1.2.2
       '@testing-library/jest-dom':
         specifier: ^5
         version: 5.17.0
@@ -3626,6 +3629,10 @@ packages:
       semantic-release: 21.1.2(typescript@5.7.3)
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@semrel-extra/npm@1.2.2:
+    resolution: {integrity: sha512-QoOJFUd00ORaqOQUe2wYmwPwa7NRdGGfUhzjZ9UEZqoqymXaBDVmFF2hE3h8mFaTa/iWpAyRrrjTsg8HbSpZyw==}
     dev: true
 
   /@sinclair/typebox@0.27.8:

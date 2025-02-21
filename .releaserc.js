@@ -11,7 +11,7 @@ module.exports = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
-    '@semantic-release/npm',
+    ['@semrel-extra/npm'],
     [
       '@semantic-release/github',
       {

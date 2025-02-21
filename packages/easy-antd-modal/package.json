@@ -1,0 +1,78 @@
+{
+  "name": "easy-antd-modal",
+  "version": "1.7.1",
+  "description": "二次开发, 简化 Ant Design Modal 的使用方式",
+  "keywords": [
+    "antd",
+    "Ant Design",
+    "Modal",
+    "React",
+    "drag"
+  ],
+  "homepage": "https://github.com/Wxh16144/easy-antd-modal#readme",
+  "bugs": {
+    "url": "https://github.com/Wxh16144/easy-antd-modal/issues/new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wxh16144/easy-antd-modal.git",
+    "directory": "packages/easy-antd-modal"
+  },
+  "license": "MIT",
+  "author": "Wxh16144(wxh1220@gmail.com)",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./es/*": "./es/*",
+    "./lib/*": "./lib/*"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "build": "father build",
+    "dev": "father dev",
+    "doctor": "father doctor",
+    "prepublishOnly": "npm run doctor && npm run build"
+  },
+  "dependencies": {
+    "@wuxh/use-modal-enhanced": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "peerDependencies": {
+    "@dnd-kit/core": "^6",
+    "@dnd-kit/modifiers": "^6",
+    "@dnd-kit/utilities": "^3",
+    "antd": "^4.7.0 || ^5.3.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@dnd-kit/core": {
+      "optional": true
+    },
+    "@dnd-kit/modifiers": {
+      "optional": true
+    },
+    "@dnd-kit/utilities": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

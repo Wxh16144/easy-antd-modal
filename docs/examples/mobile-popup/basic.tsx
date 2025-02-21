@@ -1,5 +1,5 @@
 import { Button } from 'antd-mobile';
-import { Popup } from 'easy-antd-modal/mobile';
+import { Popup } from 'easy-antd-modal-m';
 
 export default () => (
   <Popup closeOnMaskClick trigger={<Button color="danger">Open Popup</Button>}>

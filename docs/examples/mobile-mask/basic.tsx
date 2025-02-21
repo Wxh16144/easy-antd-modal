@@ -1,5 +1,5 @@
 import { Button } from 'antd-mobile';
-import { Mask } from 'easy-antd-modal/mobile';
+import { Mask } from 'easy-antd-modal-m';
 
 export default () => (
   <Mask trigger={<Button color="primary">Open Mask</Button>}>

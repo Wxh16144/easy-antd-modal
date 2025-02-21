@@ -1,14 +1,6 @@
 {
-  "name": "easy-antd-modal",
-  "version": "1.7.1",
-  "description": "二次开发, 简化 Ant Design Modal 的使用方式",
-  "keywords": [
-    "antd",
-    "Ant Design",
-    "Modal",
-    "React",
-    "drag"
-  ],
+  "name": "easy-antd-modal-repo",
+  "private": true,
   "homepage": "https://github.com/Wxh16144/easy-antd-modal#readme",
   "bugs": {
     "url": "https://github.com/Wxh16144/easy-antd-modal/issues/new"
@@ -19,59 +11,20 @@
   },
   "license": "MIT",
   "author": "Wxh16144(wxh1220@gmail.com)",
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.js",
-      "require": "./lib/index.js"
-    },
-    "./es/*": "./es/*",
-    "./lib/*": "./lib/*",
-    "./dist/*": "./dist/*",
-    "./mobile": {
-      "types": "./es/mobile/index.d.ts",
-      "import": "./es/mobile/index.js",
-      "require": "./lib/mobile/index.js"
-    },
-    "./drag-modal": {
-      "types": "./es/drag-modal/index.d.ts",
-      "import": "./es/drag-modal/index.js",
-      "require": "./lib/drag-modal/index.js"
-    },
-    "./hooks": {
-      "types": "./es/hooks/index.d.ts",
-      "import": "./es/hooks/index.js",
-      "require": "./lib/hooks/index.js"
-    },
-    "./util": {
-      "types": "./es/util/index.d.ts",
-      "import": "./es/util/index.js",
-      "require": "./lib/util/index.js"
-    }
-  },
-  "main": "lib/index.js",
-  "unpkg": "dist/easy-antd-modal.min.js",
-  "module": "es/index.js",
-  "types": "es/index.d.ts",
-  "files": [
-    "dist",
-    "lib",
-    "es"
-  ],
   "scripts": {
-    "build": "father build",
-    "build:watch": "father dev",
+    "build": "pnpm --filter={packages/*} run build",
+    "build:watch": "pnpm --filter={packages/*} run dev",
     "ci": "npm run lint && npm run type-check && npm run doctor && npm run build",
     "clean": "rm -rf es lib dist coverage .dumi/tmp .eslintcache .doc",
     "dev": "dumi dev",
     "docs:build": "dumi build",
-    "doctor": "father doctor",
-    "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "doctor": "pnpm --filter={packages/*} run doctor",
+    "lint": "eslint \"packages/*/{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && npm run setup",
     "prepublishOnly": "npm run doctor && npm run build",
     "prettier": "prettier -c --write \"**/**\"",
-    "release": "semantic-release",
+    "release": "multi-semantic-release --ignore-private-packages",
+    "release:local": "pnpm run release --no-ci",
     "setup": "dumi setup && npm run setup:link",
     "setup:link": "[ -f examples/with-antd4/src/App.tsx ] || ln -s ../../with-antd5/src/App.tsx examples/with-antd4/src/App.tsx",
     "start": "dumi dev",
@@ -98,6 +51,7 @@
     "@commitlint/config-conventional": "^17",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@semrel-extra/npm": "^1.2.2",
     "@testing-library/jest-dom": "^5",
     "@testing-library/react": "^14",
     "@types/react": "^18",
@@ -105,43 +59,33 @@
     "@types/testing-library__jest-dom": "^5",
     "@umijs/lint": "^4",
     "@vitest/coverage-v8": "latest",
+    "antd": "^5",
     "antd-legacy": "npm:antd@4.7.0",
+    "antd-mobile": "^5",
     "antd4": "npm:antd@4",
     "commitlint": "^17",
     "concurrently": "^7",
     "cross-env": "^7",
     "dumi": "^2.2.17",
     "dumi-theme-antd-style": "latest",
+    "easy-antd-modal": "workspace:*",
+    "easy-antd-modal-m": "workspace:*",
     "eslint": "^8",
     "fast-glob": "^3.3.1",
     "father": "^4",
     "husky": "^8",
     "jsdom": "^22",
     "lint-staged": "^13",
+    "multi-semantic-release": "^3",
     "prettier": "^2",
     "prettier-plugin-organize-imports": "^3",
     "prettier-plugin-packagejson": "^2",
     "react": "^18",
     "react-dom": "^18",
-    "semantic-release": "^21",
+    "semantic-release": "^19",
     "stylelint": "^15",
-    "typescript": "^5",
-    "vitest": "latest"
+    "typescript": "^5.7.2",
+    "vitest": "3.x"
   },
-  "peerDependencies": {
-    "@dnd-kit/core": "^6",
-    "@dnd-kit/modifiers": "^6",
-    "@dnd-kit/utilities": "^3",
-    "antd": "^4.7.0 || ^5.3.0",
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
-  },
-  "optionalDependencies": {
-    "antd-mobile": "^5"
-  },
-  "packageManager": "pnpm@8.6.2",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  }
+  "packageManager": "pnpm@8.6.2"
 }

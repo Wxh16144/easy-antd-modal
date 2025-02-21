@@ -5,4 +5,4 @@ nav:
   order: 999
 ---
 
-<embed src="../CHANGELOG.md"></embed>
+<embed src="../packages/easy-antd-modal/CHANGELOG.md"></embed>

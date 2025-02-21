@@ -1,6 +1,6 @@
 {
   "name": "with-antd5",
-  "version": "0.0.0",
+  "version": "1.0.0-beta.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "antd": "^5.12.8",
-    "easy-antd-modal": "workspace:*",
+    "easy-antd-modal": "1.0.0-beta.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

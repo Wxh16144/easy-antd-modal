@@ -1,6 +1,6 @@
 {
   "name": "easy-antd-modal-m",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "二次开发, 简化 Ant Design (Mobile) Modal 的使用方式",
   "keywords": [
     "antd",
@@ -44,7 +44,7 @@
     "prepublishOnly": "npm run doctor && npm run build"
   },
   "dependencies": {
-    "@wuxh/use-modal-enhanced": "workspace:^*"
+    "@wuxh/use-modal-enhanced": "1.0.1"
   },
   "devDependencies": {
     "@types/react": "^18",

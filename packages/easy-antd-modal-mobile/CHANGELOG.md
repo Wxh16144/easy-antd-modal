@@ -1,3 +1,9 @@
+## easy-antd-modal-m [1.0.1](https://github.com/Wxh16144/easy-antd-modal/compare/easy-antd-modal-m@1.0.0...easy-antd-modal-m@1.0.1) (2025-04-17)
+
+### Dependencies
+
+- **@wuxh/use-modal-enhanced:** upgraded to 1.0.1
+
 # easy-antd-modal-m 1.0.0 (2025-02-21)
 
 ### Features

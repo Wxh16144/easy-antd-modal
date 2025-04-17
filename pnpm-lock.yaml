@@ -43,7 +43,7 @@ importers:
         version: 4.4.5(eslint@8.57.1)(stylelint@15.11.0)(typescript@5.7.3)
       '@vitest/coverage-v8':
         specifier: latest
-        version: 3.0.6(vitest@3.0.6)
+        version: 3.1.1(vitest@3.0.6)
       antd:
         specifier: ^5
         version: 5.24.1(react-dom@18.3.1)(react@18.3.1)
@@ -230,7 +230,7 @@ importers:
         specifier: ^3
         version: 3.2.2(react@18.3.1)
       '@wuxh/use-modal-enhanced':
-        specifier: 1.0.0-beta.1
+        specifier: workspace:^*
         version: link:../hooks
       antd:
         specifier: ^4.7.0 || ^5.3.0
@@ -252,7 +252,7 @@ importers:
   packages/easy-antd-modal-mobile:
     dependencies:
       '@wuxh/use-modal-enhanced':
-        specifier: 1.0.0-beta.1
+        specifier: workspace:^*
         version: link:../hooks
       antd-mobile:
         specifier: ^5
@@ -5077,11 +5077,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/coverage-v8@3.0.6(vitest@3.0.6):
-    resolution: {integrity: sha512-JRTlR8Bw+4BcmVTICa7tJsxqphAktakiLsAmibVLAWbu1lauFddY/tXeM6sAyl1cgkPuXtpnUgaCPhTdz1Qapg==}
+  /@vitest/coverage-v8@3.1.1(vitest@3.0.6):
+    resolution: {integrity: sha512-MgV6D2dhpD6Hp/uroUoAIvFqA8AuvXEFBC2eepG3WFc1pxTfdk1LEqqkWoWhjz+rytoqrnUUCdf6Lzco3iHkLQ==}
     peerDependencies:
-      '@vitest/browser': 3.0.6
-      vitest: 3.0.6
+      '@vitest/browser': 3.1.1
+      vitest: 3.1.1
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
@@ -5095,7 +5095,7 @@ packages:
       istanbul-reports: 3.1.7
       magic-string: 0.30.17
       magicast: 0.3.5
-      std-env: 3.8.0
+      std-env: 3.9.0
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
       vitest: 3.0.6(@types/node@20.5.1)(jsdom@22.1.0)
@@ -16405,6 +16405,10 @@ packages:
 
   /std-env@3.8.0:
     resolution: {integrity: sha512-Bc3YwwCB+OzldMxOXJIIvC6cPRWr/LxOp48CdQTOkPyk/t4JWWJbrilwBd7RJzKV8QW7tJkcgAmeuLLJugl5/w==}
+    dev: true
+
+  /std-env@3.9.0:
+    resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
     dev: true
 
   /stop-iteration-iterator@1.1.0:

@@ -92,8 +92,22 @@ function useModalEnhanced<CloseCB extends FunctionMap = any>(props: UseModalEnha
     });
   }
 
-  const contextHolder = { trigger, content: contentNode };
-  const action = { open, close };
+  const contextHolder = React.useMemo(
+    () => ({
+      trigger,
+      content: contentNode,
+    }),
+    [trigger, contentNode],
+  );
+
+  const actions = React.useMemo(
+    () => ({
+      open,
+      close,
+    }),
+    [open, close],
+  );
+
   const resetProps = omit(props, [
     'defaultOpen',
     'onClick',
@@ -103,7 +117,7 @@ function useModalEnhanced<CloseCB extends FunctionMap = any>(props: UseModalEnha
     'children',
   ]);
 
-  return [visible, action, contextHolder, resetProps] as const;
+  return [visible, actions, contextHolder, resetProps] as const;
 }
 
 export default useModalEnhanced;

@@ -8,6 +8,7 @@ exports[`export > should work 1`] = `
   "EasyAntdModalContext",
   "useEasyAntdModal",
   "EasyAntdModalProvider",
+  "useEasyModal",
   "has",
   "omit",
   "isElement",

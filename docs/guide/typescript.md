@@ -22,7 +22,7 @@ order: 2
  */
 import React from 'react';
 import { Button } from 'antd';
-import Modal from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 
 export default () => {
   const [visible, setVisible] = React.useState<boolean>(false);

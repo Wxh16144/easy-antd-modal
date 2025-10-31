@@ -19,7 +19,7 @@ npm install easy-antd-modal --save
 
 ```tsx | pure
 import { Button } from 'antd';
-import Modal from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 
 export default () => (
   <Modal title="easy-antd-modal" trigger={<Button type="primary">Click Me</Button>}>

@@ -1,5 +1,5 @@
 import { Button, message } from 'antd';
-import Modal from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 
 export default () => (
   <Modal

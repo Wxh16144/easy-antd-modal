@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import Modal, { ModalEnhancedAction } from 'easy-antd-modal';
+import { Modal, ModalEnhancedAction } from 'easy-antd-modal';
 import * as React from 'react';
 
 export default () => {

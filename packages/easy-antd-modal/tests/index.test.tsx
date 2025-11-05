@@ -306,6 +306,23 @@ describe('Modal', () => {
     });
   });
   describe('hooks close', () => {
+    it('在 Modal Content 外部使用 useEasyModal 会有警告', async () => {
+      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      const ModalContent: React.FC = () => {
+        const { close } = useEasyModal();
+        return <Button onClick={() => close()}>Close Modal</Button>;
+      };
+
+      render(<ModalContent />);
+
+      fireEvent.click(screen.getByText('Close Modal'));
+
+      expect(consoleWarnSpy).toHaveBeenCalledWith(
+        '[easy-antd-modal]: Can not find ModalContext. Please ensure that your component is used in the proper context.',
+      );
+
+      consoleWarnSpy.mockRestore();
+    });
     it('使用 useEasyModal 关闭 Modal', async () => {
       const onCancel = vi.fn();
       const ModalContent: React.FC = () => {

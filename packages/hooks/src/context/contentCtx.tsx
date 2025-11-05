@@ -2,7 +2,9 @@ import { createContext } from 'react';
 import type { ModalEnhancedAction } from '../useModalEnhanced';
 
 const loop = () => {
-  console.warn('This is a placeholder function and does nothing.');
+  console.warn(
+    '[easy-antd-modal]: Can not find ModalContext. Please ensure that your component is used in the proper context.',
+  );
 };
 
 export interface EasyAntdModalContentContextValue extends ModalEnhancedAction {

@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import Modal from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 import ContentFrom from './ContentForm';
 
 export default () => (

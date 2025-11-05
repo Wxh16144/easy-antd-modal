@@ -11,7 +11,7 @@ group:
 
 ```tsx
 import { Button, Space } from 'antd';
-import Modal from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 
 export default () => (
   <Button

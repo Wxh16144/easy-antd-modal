@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import Modal, { EasyAntdModalProvider } from 'easy-antd-modal';
+import { EasyAntdModalProvider, Modal } from 'easy-antd-modal';
 
 export default () => (
   <EasyAntdModalProvider triggerProps="children" contentProps="content">

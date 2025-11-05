@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, waitFakeTimer } from '##/tests/utils';
-import Modal from 'easy-antd-modal';
+import { Modal } from 'easy-antd-modal';
 import React from 'react';
 
 vi.mock('antd', () => vi.importActual('antd-legacy'));

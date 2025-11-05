@@ -10,6 +10,7 @@ import DefaultExportModal, {
 import React from 'react';
 
 describe('Modal', () => {
+  // todo: remove default export in next major version
   it('默认导出为 Modal', () => {
     expect(DefaultExportModal).toBeDefined();
     expect(Modal).toBeDefined();

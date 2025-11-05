@@ -12,4 +12,12 @@ export { DragModal, Drawer, Modal };
 export * from '@wuxh/use-modal-enhanced';
 
 export * from './hooks';
+/**
+ * @deprecated  Please use named imports instead,
+ * next version will remove default export.
+ * ```diff
+ * - import Modal from 'easy-antd-modal';
+ * + import { Modal } from 'easy-antd-modal';
+ * ```
+ */
 export default Modal;

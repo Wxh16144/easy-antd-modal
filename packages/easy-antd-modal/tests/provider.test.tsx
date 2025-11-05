@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFakeTimer } from '##/tests/utils';
 import { Button } from 'antd';
-import Modal, { EasyAntdModalProvider, useEasyAntdModal } from 'easy-antd-modal';
+import { EasyAntdModalProvider, Modal, useEasyAntdModal } from 'easy-antd-modal';
 import React from 'react';
 
 describe('Provider', () => {

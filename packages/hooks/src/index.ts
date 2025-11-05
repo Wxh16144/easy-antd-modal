@@ -6,6 +6,7 @@ export { default as useLatestFunc } from './useLatestFunc';
 export * from './useModalEnhanced';
 export { default as useModalEnhanced } from './useModalEnhanced';
 
-export * from './context';
+export * from './context/configCtx';
 export * from './types';
+export * from './useEasyModal';
 export * from './util';

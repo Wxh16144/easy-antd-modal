@@ -6,6 +6,7 @@ import DefaultExportModal, {
   Modal,
   ModalEnhancedAction,
   PropsWithModalEnhanced,
+  useEasyModal,
 } from 'easy-antd-modal';
 import React from 'react';
 
@@ -302,6 +303,46 @@ describe('Modal', () => {
         expect(onClean).toHaveBeenCalled();
         expect(onClean).toHaveBeenCalledWith('foo', 'bar');
       });
+    });
+  });
+  describe('hooks close', () => {
+    it('在 Modal Content 外部使用 useEasyModal 会有警告', async () => {
+      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      const ModalContent: React.FC = () => {
+        const { close } = useEasyModal();
+        return <Button onClick={() => close()}>Close Modal</Button>;
+      };
+
+      render(<ModalContent />);
+
+      fireEvent.click(screen.getByText('Close Modal'));
+
+      expect(consoleWarnSpy).toHaveBeenCalledWith(
+        '[easy-antd-modal]: Can not find ModalContext. Please ensure that your component is used in the proper context.',
+      );
+
+      consoleWarnSpy.mockRestore();
+    });
+    it('使用 useEasyModal 关闭 Modal', async () => {
+      const onCancel = vi.fn();
+      const ModalContent: React.FC = () => {
+        const { close } = useEasyModal();
+        return <Button onClick={() => close()}>Close Modal</Button>;
+      };
+
+      render(
+        <Modal defaultOpen onCancel={onCancel} destroyOnClose>
+          <ModalContent />
+        </Modal>,
+      );
+
+      const closeButton = screen.getByText('Close Modal');
+      expect(closeButton).toBeInTheDocument();
+      fireEvent.click(closeButton!);
+      await waitFakeTimer();
+
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByText('Close Modal')).not.toBeInTheDocument();
     });
   });
 });

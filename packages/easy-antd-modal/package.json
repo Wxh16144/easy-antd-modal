@@ -44,7 +44,7 @@
     "prepublishOnly": "npm run doctor && npm run build"
   },
   "dependencies": {
-    "@wuxh/use-modal-enhanced": "1.0.1"
+    "@wuxh/use-modal-enhanced": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18",

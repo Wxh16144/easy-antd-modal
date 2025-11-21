@@ -1,3 +1,9 @@
+## easy-antd-modal [2.0.2](https://github.com/Wxh16144/easy-antd-modal/compare/easy-antd-modal@2.0.1...easy-antd-modal@2.0.2) (2025-11-05)
+
+### Bug Fixes
+
+- update deprecation notice for default export of Modal ([#29](https://github.com/Wxh16144/easy-antd-modal/issues/29)) ([32a9f71](https://github.com/Wxh16144/easy-antd-modal/commit/32a9f71b2e6a6fe99ddb379ded8bf355644989ca))
+
 ## easy-antd-modal [2.0.1](https://github.com/Wxh16144/easy-antd-modal/compare/easy-antd-modal@2.0.0...easy-antd-modal@2.0.1) (2025-04-17)
 
 ### Dependencies

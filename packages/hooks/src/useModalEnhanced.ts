@@ -1,5 +1,6 @@
 import React from 'react';
-import { useEasyAntdModal } from './context';
+import { useEasyAntdModal } from './context/configCtx';
+import { EasyAntdModalContentContext } from './context/contentCtx';
 import type { AnyFunction, AnyObj } from './types';
 import useBoolean from './useBoolean';
 import useLatestFunc from './useLatestFunc';
@@ -92,20 +93,27 @@ function useModalEnhanced<CloseCB extends FunctionMap = any>(props: UseModalEnha
     });
   }
 
-  const contextHolder = React.useMemo(
-    () => ({
-      trigger,
-      content: contentNode,
-    }),
-    [trigger, contentNode],
-  );
-
   const actions = React.useMemo(
     () => ({
       open,
       close,
     }),
     [open, close],
+  );
+
+  // ======================== Context Holder ========================
+  contentNode = React.createElement(
+    EasyAntdModalContentContext.Provider,
+    { value: actions },
+    contentNode,
+  );
+
+  const contextHolder = React.useMemo(
+    () => ({
+      trigger,
+      content: contentNode,
+    }),
+    [trigger, contentNode],
   );
 
   const resetProps = omit(props, [

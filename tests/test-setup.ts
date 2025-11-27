@@ -10,10 +10,10 @@ if (typeof window !== 'undefined') {
     Object.defineProperty(global.window, 'matchMedia', {
       value: vi.fn((query) => ({
         matches: query.includes('max-width'),
-        addListener: () => {},
-        addEventListener: () => {},
-        removeListener: () => {},
-        removeEventListener: () => {},
+        addListener: () => { },
+        addEventListener: () => { },
+        removeListener: () => { },
+        removeEventListener: () => { },
       })),
     });
   }
@@ -21,3 +21,29 @@ if (typeof window !== 'undefined') {
   const { getComputedStyle } = window;
   window.getComputedStyle = (elt) => getComputedStyle(elt);
 }
+
+// Mock useId to return a stable id for snapshot testing
+vi.mock(import('react'), async (importOriginal) => {
+  const originReact: any = await importOriginal()
+  let cloneReact: any = {
+    ...originReact,
+  };
+
+  if (process.env.MOCK_USE_ID !== 'false') {
+    cloneReact = {
+      ...cloneReact,
+      useId: () => {
+        // TODO: Should be deleted. assign: @Wuxh<wxh1220@gmail.com>
+        globalThis.console.log('%c@Wuxh(Red)', 'color:#f83888;', {
+          __x__: '663766',
+
+        })
+
+        return 'test-id'
+      }
+    };
+  }
+
+  return cloneReact;
+});
+

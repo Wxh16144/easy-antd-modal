@@ -1,8 +1,15 @@
 import { renderHook } from '@testing-library/react';
 import { usePrefixCls } from 'easy-antd-modal';
+import { afterAll } from 'vitest';
+
+vi.mock('antd', () => vi.importActual('antd5'));
+
+afterAll(() => {
+  vi.resetAllMocks();
+});
 
 describe('usePrefixCls', () => {
-  it('默认情况下正常工作', () => {
+  it('antd5 正常工作', () => {
     const { result } = renderHook(() => usePrefixCls('test'));
     expect(result.current).toBe('easy-ant-test');
   });

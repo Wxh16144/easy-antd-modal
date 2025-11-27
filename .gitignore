@@ -42,8 +42,9 @@ example/.temp/*
 .eslintcache
 techUI*
 
-# Symbolic link
+# copy from with-antd6
 examples/with-antd4/src/App.tsx
+examples/with-antd5/src/App.tsx
 
 # sync readme
 packages/easy-antd-modal/README.md

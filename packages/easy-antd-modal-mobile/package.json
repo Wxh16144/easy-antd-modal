@@ -44,13 +44,7 @@
     "prepublishOnly": "npm run doctor && npm run build"
   },
   "dependencies": {
-    "@wuxh/use-modal-enhanced": "1.0.1"
-  },
-  "devDependencies": {
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "react": "^18",
-    "react-dom": "^18"
+    "@wuxh/use-modal-enhanced": "workspace:^*"
   },
   "peerDependencies": {
     "antd-mobile": "^5",

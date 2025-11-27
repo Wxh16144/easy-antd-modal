@@ -26,7 +26,7 @@
     "release": "multi-semantic-release --ignore-private-packages",
     "release:local": "pnpm run release --no-ci",
     "setup": "dumi setup && npm run setup:link",
-    "setup:link": "[ -f examples/with-antd4/src/App.tsx ] || ln -s ../../with-antd5/src/App.tsx examples/with-antd4/src/App.tsx",
+    "setup:link": "tsx ./scripts/setup-link.ts",
     "start": "dumi dev",
     "sync:readme": "cp ./README.md ./packages/easy-antd-modal/README.md",
     "test": "vitest --passWithNoTests",
@@ -55,6 +55,7 @@
     "@semrel-extra/npm": "^1.2.2",
     "@testing-library/jest-dom": "^5",
     "@testing-library/react": "^14",
+    "@types/node": "^24.10.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/testing-library__jest-dom": "^5",
@@ -86,7 +87,8 @@
     "react-dom": "^18",
     "semantic-release": "^19",
     "stylelint": "^15",
-    "typescript": "^5.7.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.7.3",
     "vitest": "3.x"
   },
   "packageManager": "pnpm@8.6.2"

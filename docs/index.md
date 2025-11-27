@@ -9,9 +9,9 @@ hero:
       link: https://github.com/Wxh16144/easy-antd-modal
 
 features:
-  - title: 兼容 Ant Design 4 & 5
-    image: 4️⃣+5️⃣
-    description: 支持 antd4.x 和 antd5.x, 所有 API 保持一致
+  - title: 兼容 Ant Design 4,5,6
+    image: 4️⃣+5️⃣+6️⃣
+    description: 同时支持 Ant Design 4.x, 5.x 和 6.x
     row: 6
 
   - title: 自动绑定打开事件

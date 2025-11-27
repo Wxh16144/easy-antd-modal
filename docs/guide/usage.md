@@ -13,10 +13,12 @@ order: 3
 /**
  * defaultShowCode: true
  */
-import { Button } from 'antd';
+import { Button, version } from 'antd';
 import { Modal } from 'easy-antd-modal';
 
-export default () => <Modal trigger={<Button type="primary">Open Modal</Button>}>I ❤️ antd</Modal>;
+export default () => (
+  <Modal trigger={<Button type="primary">Open Modal</Button>}>I ❤️ Ant Design {version}</Modal>
+);
 ```
 
 ## 不推荐使用

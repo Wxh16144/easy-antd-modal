@@ -44,3 +44,6 @@ techUI*
 
 # Symbolic link
 examples/with-antd4/src/App.tsx
+
+# sync readme
+packages/easy-antd-modal/README.md
